@@ -1,8 +1,8 @@
 package com.xworkz.disha;
 
-public class boring
+public class hello
     {
     public static void main(String[] args){
-        System.out.println("class is boring");
+        System.out.println("hello world");
     }
 }
