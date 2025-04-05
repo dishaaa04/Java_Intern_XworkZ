@@ -1,54 +1,24 @@
 package com.xworkz.inheritanceDemo;
 
-public class WashingMachine extends Appliance {
+public class WashingMachine {
 
-    WashingMachine() {
-        super();
-        System.out.println("Washing Machine class");
+    public void loadClothes() {
+        System.out.println("Washing machine is loading clothes");
     }
 
-    @Override
-    public void turnOn() {
-        System.out.println("Washing machine is powered on");
+    public void addDetergent() {
+        System.out.println("Adding detergent to the washing machine");
     }
 
-    @Override
-    public void turnOff() {
-        System.out.println("Washing machine is shutting down");
+    public void startWashCycle() {
+        System.out.println("Washing cycle started");
     }
 
-    @Override
-    public void consumePower() {
-        System.out.println("Washing machine consumes 500W per cycle");
-    }
-
-    @Override
-    public void warranty() {
-        System.out.println("Washing machine has a 2-year warranty");
-    }
-
-    @Override
-    public void maintenance() {
-        System.out.println("Washing machine requires monthly maintenance");
-    }
-
-    public void washClothes() {
-        System.out.println("Washing machine washes clothes");
-    }
-
-    public void rinse() {
-        System.out.println("Washing machine rinses clothes");
+    public void rinseClothes() {
+        System.out.println("Rinsing the clothes");
     }
 
     public void spinDry() {
-        System.out.println("Washing machine dries clothes");
-    }
-
-    public void detergentUsage() {
-        System.out.println("Washing machine uses detergent");
-    }
-
-    public void setTimer() {
-        System.out.println("Washing machine has a timer setting");
+        System.out.println("Spin drying the clothes");
     }
 }
