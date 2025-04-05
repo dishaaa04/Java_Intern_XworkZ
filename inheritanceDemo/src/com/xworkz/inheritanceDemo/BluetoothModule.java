@@ -1,54 +1,20 @@
 package com.xworkz.inheritanceDemo;
 
-public class BluetoothModule extends IoTSensor {
+public class BluetoothModule {
 
-    public BluetoothModule() {
-        super();
-        System.out.println("Bluetooth Module initialized");
+    public void connectDevice() {
+        System.out.println("BluetoothModule connects to a device wirelessly");
     }
 
-    @Override
-    public void senseData() {
-        System.out.println("Bluetooth Module senses nearby Bluetooth devices");
+    public void transferData() {
+        System.out.println("BluetoothModule transfers data between devices");
     }
 
-    @Override
-    public void transmitData() {
-        System.out.println("Bluetooth Module transmits data wirelessly");
+    public void pairDevices() {
+        System.out.println("BluetoothModule pairs devices for communication");
     }
 
-    @Override
-    public void calibrate() {
-        System.out.println("Bluetooth Module adjusts frequency settings");
-    }
-
-    @Override
-    public void connectToNetwork() {
-        System.out.println("Bluetooth Module connects to paired devices");
-    }
-
-    @Override
-    public void monitorEnvironment() {
-        System.out.println("Bluetooth Module checks connection stability");
-    }
-
-    public void pairDevice() {
-        System.out.println("Bluetooth Module pairs with another device");
-    }
-
-    public void enableVisibility() {
-        System.out.println("Bluetooth Module enables visibility to other devices");
-    }
-
-    public void disconnect() {
-        System.out.println("Bluetooth Module disconnects from a device");
-    }
-
-    public void scanDevices() {
-        System.out.println("Bluetooth Module scans for available devices");
-    }
-
-    public void secureConnection() {
-        System.out.println("Bluetooth Module ensures secure connection");
+    public void disconnectDevice() {
+        System.out.println("BluetoothModule disconnects the device");
     }
 }
