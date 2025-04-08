@@ -9,7 +9,7 @@ public class ExternalHDD extends HardDiskDrive {
 
     @Override
     public void readWriteSpeed() {
-        System.out.println("Read/Write Speed: 100MB/s via USB 3.0");
+        System.out.println("Read or Write Speed: 100MB/s via USB 3.0");
     }
 
     public void connectUSB() {
