@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Towel {
-
+    private String size;
     private String color;
-    private String material;
-    private double length;
+    private boolean isSoft;
 
-    public Towel(String color, String material, double length) {
+    public Towel(String size, String color, boolean isSoft) {
+        this.size = size;
         this.color = color;
-        this.material = material;
-        this.length = length;
+        this.isSoft = isSoft;
     }
 
     @Override
     public String toString() {
-        return "[color=" + color + ", material=" + material + ", length=" + length + "cm]";
+        return "[size=" + size + ", color=" + color + ", isSoft=" + isSoft + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 6500;
     }
 }

@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Building {
-
-    private String name;
+    private String type;
     private int floors;
-    private String location;
+    private boolean hasLift;
 
-    public Building(String name, int floors, String location) {
-        this.name = name;
+    public Building(String type, int floors, boolean hasLift) {
+        this.type = type;
         this.floors = floors;
-        this.location = location;
+        this.hasLift = hasLift;
     }
 
     @Override
     public String toString() {
-        return "[name=" + name + ", floors=" + floors + ", location=" + location + "]";
+        return "[type=" + type + ", floors=" + floors + ", hasLift=" + hasLift + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 490;
     }
 }

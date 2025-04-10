@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class NetworkDevice {
-
-    private String deviceName;
+    private String deviceType;
     private String ipAddress;
-    private boolean isManaged;
+    private boolean isActive;
 
-    public NetworkDevice(String deviceName, String ipAddress, boolean isManaged) {
-        this.deviceName = deviceName;
+    public NetworkDevice(String deviceType, String ipAddress, boolean isActive) {
+        this.deviceType = deviceType;
         this.ipAddress = ipAddress;
-        this.isManaged = isManaged;
+        this.isActive = isActive;
     }
 
     @Override
     public String toString() {
-        return "[deviceName=" + deviceName + ", ipAddress=" + ipAddress + ", isManaged=" + isManaged + "]";
+        return "[deviceType=" + deviceType + ", ipAddress=" + ipAddress + ", isActive=" + isActive + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 3600;
     }
 }

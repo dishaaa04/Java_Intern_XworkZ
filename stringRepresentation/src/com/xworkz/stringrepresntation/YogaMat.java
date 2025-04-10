@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class YogaMat {
-
-    private String brand;
+    private String color;
     private double thickness;
-    private boolean isEcoFriendly;
+    private boolean isFoldable;
 
-    public YogaMat(String brand, double thickness, boolean isEcoFriendly) {
-        this.brand = brand;
+    public YogaMat(String color, double thickness, boolean isFoldable) {
+        this.color = color;
         this.thickness = thickness;
-        this.isEcoFriendly = isEcoFriendly;
+        this.isFoldable = isFoldable;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", thickness=" + thickness + "mm, isEcoFriendly=" + isEcoFriendly + "]";
+        return "[color=" + color + ", thickness=" + thickness + ", isFoldable=" + isFoldable + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 8300;
     }
 }

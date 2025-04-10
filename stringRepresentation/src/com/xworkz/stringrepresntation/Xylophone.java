@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Xylophone {
-
     private int keys;
     private String material;
-    private String scale;
+    private boolean isTuned;
 
-    public Xylophone(int keys, String material, String scale) {
+    public Xylophone(int keys, String material, boolean isTuned) {
         this.keys = keys;
         this.material = material;
-        this.scale = scale;
+        this.isTuned = isTuned;
     }
 
     @Override
     public String toString() {
-        return "[keys=" + keys + ", material=" + material + ", scale=" + scale + "]";
+        return "[keys=" + keys + ", material=" + material + ", isTuned=" + isTuned + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 8200;
     }
 }

@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Window {
+    private String frameMaterial;
+    private int panes;
+    private boolean isOpenable;
 
-    private String material;
-    private String type;
-    private boolean hasGrill;
-
-    public Window(String material, String type, boolean hasGrill) {
-        this.material = material;
-        this.type = type;
-        this.hasGrill = hasGrill;
+    public Window(String frameMaterial, int panes, boolean isOpenable) {
+        this.frameMaterial = frameMaterial;
+        this.panes = panes;
+        this.isOpenable = isOpenable;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", type=" + type + ", hasGrill=" + hasGrill + "]";
+        return "[frameMaterial=" + frameMaterial + ", panes=" + panes + ", isOpenable=" + isOpenable + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 7800;
     }
 }

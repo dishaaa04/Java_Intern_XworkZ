@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class OperatingSystem {
-
     private String name;
     private String version;
-    private boolean is64Bit;
+    private boolean isOpenSource;
 
-    public OperatingSystem(String name, String version, boolean is64Bit) {
+    public OperatingSystem(String name, String version, boolean isOpenSource) {
         this.name = name;
         this.version = version;
-        this.is64Bit = is64Bit;
+        this.isOpenSource = isOpenSource;
     }
 
     @Override
     public String toString() {
-        return "[name=" + name + ", version=" + version + ", is64Bit=" + is64Bit + "]";
+        return "[name=" + name + ", version=" + version + ", isOpenSource=" + isOpenSource + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 3800;
     }
 }

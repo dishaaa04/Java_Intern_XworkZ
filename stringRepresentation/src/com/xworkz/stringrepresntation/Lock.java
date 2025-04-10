@@ -1,7 +1,6 @@
 package com.xworkz.stringrepresntation;
 
 public class Lock {
-
     private String type;
     private String brand;
     private boolean isDigital;
@@ -15,5 +14,11 @@ public class Lock {
     @Override
     public String toString() {
         return "[type=" + type + ", brand=" + brand + ", isDigital=" + isDigital + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 3000;
     }
 }

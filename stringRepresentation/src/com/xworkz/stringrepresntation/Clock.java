@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Clock {
-
     private String type;
-    private String brand;
-    private boolean isDigital;
+    private boolean hasAlarm;
+    private String display;
 
-    public Clock(String type, String brand, boolean isDigital) {
+    public Clock(String type, boolean hasAlarm, String display) {
         this.type = type;
-        this.brand = brand;
-        this.isDigital = isDigital;
+        this.hasAlarm = hasAlarm;
+        this.display = display;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", brand=" + brand + ", isDigital=" + isDigital + "]";
+        return "[type=" + type + ", hasAlarm=" + hasAlarm + ", display=" + display + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 555;
     }
 }

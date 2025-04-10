@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Paint {
-
     private String color;
     private String type;
-    private double quantity;
+    private double price;
 
-    public Paint(String color, String type, double quantity) {
+    public Paint(String color, String type, double price) {
         this.color = color;
         this.type = type;
-        this.quantity = quantity;
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "[color=" + color + ", type=" + type + ", quantity=" + quantity + "L]";
+        return "[color=" + color + ", type=" + type + ", price=" + price + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 4000;
     }
 }

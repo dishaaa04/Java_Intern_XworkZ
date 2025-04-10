@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Table {
-
-    private String material;
     private String shape;
+    private String material;
     private int legs;
 
-    public Table(String material, String shape, int legs) {
-        this.material = material;
+    public Table(String shape, String material, int legs) {
         this.shape = shape;
+        this.material = material;
         this.legs = legs;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", shape=" + shape + ", legs=" + legs + "]";
+        return "[shape=" + shape + ", material=" + material + ", legs=" + legs + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 6000;
     }
 }

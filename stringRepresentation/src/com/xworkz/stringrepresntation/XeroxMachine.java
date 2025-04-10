@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class XeroxMachine {
-
     private String brand;
-    private int speed;
-    private boolean supportsColor;
+    private boolean isColor;
+    private int capacity;
 
-    public XeroxMachine(String brand, int speed, boolean supportsColor) {
+    public XeroxMachine(String brand, boolean isColor, int capacity) {
         this.brand = brand;
-        this.speed = speed;
-        this.supportsColor = supportsColor;
+        this.isColor = isColor;
+        this.capacity = capacity;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", speed=" + speed + "ppm, supportsColor=" + supportsColor + "]";
+        return "[brand=" + brand + ", isColor=" + isColor + ", capacity=" + capacity + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 8000;
     }
 }

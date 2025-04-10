@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Cycle {
-
     private String brand;
-    private int gearCount;
-    private String color;
+    private int gears;
+    private boolean hasBell;
 
-    public Cycle(String brand, int gearCount, String color) {
+    public Cycle(String brand, int gears, boolean hasBell) {
         this.brand = brand;
-        this.gearCount = gearCount;
-        this.color = color;
+        this.gears = gears;
+        this.hasBell = hasBell;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", gearCount=" + gearCount + ", color=" + color + "]";
+        return "[brand=" + brand + ", gears=" + gears + ", hasBell=" + hasBell + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 1300;
     }
 }

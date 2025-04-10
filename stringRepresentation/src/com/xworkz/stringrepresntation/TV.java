@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class TV {
-
     private String brand;
     private int size;
-    private String resolution;
+    private boolean isSmart;
 
-    public TV(String brand, int size, String resolution) {
+    public TV(String brand, int size, boolean isSmart) {
         this.brand = brand;
         this.size = size;
-        this.resolution = resolution;
+        this.isSmart = isSmart;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", size=" + size + " inches, resolution=" + resolution + "]";
+        return "[brand=" + brand + ", size=" + size + ", isSmart=" + isSmart + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 7100;
     }
 }

@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Mouse {
-
-    private String brand;
+    private String type;
     private boolean isWireless;
     private int dpi;
 
-    public Mouse(String brand, boolean isWireless, int dpi) {
-        this.brand = brand;
+    public Mouse(String type, boolean isWireless, int dpi) {
+        this.type = type;
         this.isWireless = isWireless;
         this.dpi = dpi;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", isWireless=" + isWireless + ", dpi=" + dpi + "]";
+        return "[type=" + type + ", isWireless=" + isWireless + ", dpi=" + dpi + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 3400;
     }
 }

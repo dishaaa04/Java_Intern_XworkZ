@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Container {
+    private String material;
+    private double capacity;
+    private boolean isSealed;
 
-    private String imageName;
-    private int port;
-    private boolean isRunning;
-
-    public Container(String imageName, int port, boolean isRunning) {
-        this.imageName = imageName;
-        this.port = port;
-        this.isRunning = isRunning;
+    public Container(String material, double capacity, boolean isSealed) {
+        this.material = material;
+        this.capacity = capacity;
+        this.isSealed = isSealed;
     }
 
     @Override
     public String toString() {
-        return "[imageName=" + imageName + ", port=" + port + ", isRunning=" + isRunning + "]";
+        return "[material=" + material + ", capacity=" + capacity + "L, isSealed=" + isSealed + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 1000;
     }
 }

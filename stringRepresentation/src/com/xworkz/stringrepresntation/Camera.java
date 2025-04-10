@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Camera {
-
     private String brand;
     private int resolution;
-    private boolean isDSLR;
+    private boolean hasFlash;
 
-    public Camera(String brand, int resolution, boolean isDSLR) {
+    public Camera(String brand, int resolution, boolean hasFlash) {
         this.brand = brand;
         this.resolution = resolution;
-        this.isDSLR = isDSLR;
+        this.hasFlash = hasFlash;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", resolution=" + resolution + "MP, isDSLR=" + isDSLR + "]";
+        return "[brand=" + brand + ", resolution=" + resolution + "MP, hasFlash=" + hasFlash + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 222;
     }
 }

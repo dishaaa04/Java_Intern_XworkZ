@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Animal {
+    private String species;
+    private int legs;
+    private boolean isDomestic;
 
-    private String name;
-    private String habitat;
-    private int lifespan;
-
-    public Animal(String name, String habitat, int lifespan) {
-        this.name = name;
-        this.habitat = habitat;
-        this.lifespan = lifespan;
+    public Animal(String species, int legs, boolean isDomestic) {
+        this.species = species;
+        this.legs = legs;
+        this.isDomestic = isDomestic;
     }
 
     @Override
     public String toString() {
-        return "[name=" + name + ", habitat=" + habitat + ", lifespan=" + lifespan + "]";
+        return "[species=" + species + ", legs=" + legs + ", isDomestic=" + isDomestic + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 275;
     }
 }

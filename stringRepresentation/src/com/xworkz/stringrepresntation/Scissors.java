@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Scissors {
-
     private String brand;
-    private String type;
     private double length;
+    private boolean isSharp;
 
-    public Scissors(String brand, String type, double length) {
+    public Scissors(String brand, double length, boolean isSharp) {
         this.brand = brand;
-        this.type = type;
         this.length = length;
+        this.isSharp = isSharp;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", type=" + type + ", length=" + length + "cm]";
+        return "[brand=" + brand + ", length=" + length + ", isSharp=" + isSharp + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 5100;
     }
 }

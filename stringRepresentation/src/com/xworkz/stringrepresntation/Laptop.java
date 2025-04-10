@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Laptop {
-
     private String brand;
-    private int ram;
     private String processor;
+    private int ramGB;
 
-    public Laptop(String brand, int ram, String processor) {
+    public Laptop(String brand, String processor, int ramGB) {
         this.brand = brand;
-        this.ram = ram;
         this.processor = processor;
+        this.ramGB = ramGB;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", ram=" + ram + "GB, processor=" + processor + "]";
+        return "[brand=" + brand + ", processor=" + processor + ", ramGB=" + ramGB + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 2900;
     }
 }

@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Mobile {
-
     private String brand;
-    private String model;
     private int storage;
+    private boolean is5G;
 
-    public Mobile(String brand, String model, int storage) {
+    public Mobile(String brand, int storage, boolean is5G) {
         this.brand = brand;
-        this.model = model;
         this.storage = storage;
+        this.is5G = is5G;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", model=" + model + ", storage=" + storage + "GB]";
+        return "[brand=" + brand + ", storage=" + storage + "GB, is5G=" + is5G + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 3300;
     }
 }

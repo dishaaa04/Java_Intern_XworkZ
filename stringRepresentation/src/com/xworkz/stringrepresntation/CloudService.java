@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class CloudService {
-
     private String provider;
-    private String region;
-    private boolean supportsAI;
+    private int storageLimit;
+    private boolean isPaid;
 
-    public CloudService(String provider, String region, boolean supportsAI) {
+    public CloudService(String provider, int storageLimit, boolean isPaid) {
         this.provider = provider;
-        this.region = region;
-        this.supportsAI = supportsAI;
+        this.storageLimit = storageLimit;
+        this.isPaid = isPaid;
     }
 
     @Override
     public String toString() {
-        return "[provider=" + provider + ", region=" + region + ", supportsAI=" + supportsAI + "]";
+        return "[provider=" + provider + ", storageLimit=" + storageLimit + "GB, isPaid=" + isPaid + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 777;
     }
 }

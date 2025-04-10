@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Mat {
-
     private String material;
-    private String size;
-    private boolean isWaterproof;
+    private String color;
+    private boolean isWashable;
 
-    public Mat(String material, String size, boolean isWaterproof) {
+    public Mat(String material, String color, boolean isWashable) {
         this.material = material;
-        this.size = size;
-        this.isWaterproof = isWaterproof;
+        this.color = color;
+        this.isWashable = isWashable;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", size=" + size + ", isWaterproof=" + isWaterproof + "]";
+        return "[material=" + material + ", color=" + color + ", isWashable=" + isWashable + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 3200;
     }
 }

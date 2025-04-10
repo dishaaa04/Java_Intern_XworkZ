@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class MachineLearningModel {
-
-    private String modelName;
     private String algorithm;
-    private double accuracy;
+    private String framework;
+    private int datasetSize;
 
-    public MachineLearningModel(String modelName, String algorithm, double accuracy) {
-        this.modelName = modelName;
+    public MachineLearningModel(String algorithm, String framework, int datasetSize) {
         this.algorithm = algorithm;
-        this.accuracy = accuracy;
+        this.framework = framework;
+        this.datasetSize = datasetSize;
     }
 
     @Override
     public String toString() {
-        return "[modelName=" + modelName + ", algorithm=" + algorithm + ", accuracy=" + accuracy + "]";
+        return "[algorithm=" + algorithm + ", framework=" + framework + ", datasetSize=" + datasetSize + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 3100;
     }
 }

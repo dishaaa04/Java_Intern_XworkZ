@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Chair {
-
     private String material;
-    private String color;
-    private boolean hasArmrest;
+    private String style;
+    private boolean isFoldable;
 
-    public Chair(String material, String color, boolean hasArmrest) {
+    public Chair(String material, String style, boolean isFoldable) {
         this.material = material;
-        this.color = color;
-        this.hasArmrest = hasArmrest;
+        this.style = style;
+        this.isFoldable = isFoldable;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", color=" + color + ", hasArmrest=" + hasArmrest + "]";
+        return "[material=" + material + ", style=" + style + ", isFoldable=" + isFoldable + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 444;
     }
 }

@@ -1,7 +1,6 @@
 package com.xworkz.stringrepresntation;
 
 public class Pencil {
-
     private String brand;
     private String type;
     private boolean isSharpened;
@@ -15,5 +14,11 @@ public class Pencil {
     @Override
     public String toString() {
         return "[brand=" + brand + ", type=" + type + ", isSharpened=" + isSharpened + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 4200;
     }
 }

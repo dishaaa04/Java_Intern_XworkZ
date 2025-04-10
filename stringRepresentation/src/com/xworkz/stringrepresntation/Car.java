@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Car {
-
-    private String brand;
     private String model;
-    private double price;
+    private String fuelType;
+    private int seats;
 
-    public Car(String brand, String model, double price) {
-        this.brand = brand;
+    public Car(String model, String fuelType, int seats) {
         this.model = model;
-        this.price = price;
+        this.fuelType = fuelType;
+        this.seats = seats;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", model=" + model + ", price=" + price + "]";
+        return "[model=" + model + ", fuelType=" + fuelType + ", seats=" + seats + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 333;
     }
 }

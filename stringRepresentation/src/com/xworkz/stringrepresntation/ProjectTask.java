@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class ProjectTask {
+    private String title;
+    private String status;
+    private int durationDays;
 
-    private String taskName;
-    private String assignedTo;
-    private boolean isCompleted;
-
-    public ProjectTask(String taskName, String assignedTo, boolean isCompleted) {
-        this.taskName = taskName;
-        this.assignedTo = assignedTo;
-        this.isCompleted = isCompleted;
+    public ProjectTask(String title, String status, int durationDays) {
+        this.title = title;
+        this.status = status;
+        this.durationDays = durationDays;
     }
 
     @Override
     public String toString() {
-        return "[taskName=" + taskName + ", assignedTo=" + assignedTo + ", isCompleted=" + isCompleted + "]";
+        return "[title=" + title + ", status=" + status + ", durationDays=" + durationDays + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 4700;
     }
 }

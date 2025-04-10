@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Knife {
-
-    private String type;
-    private double length;
+    private String bladeMaterial;
+    private int length;
     private boolean isSharp;
 
-    public Knife(String type, double length, boolean isSharp) {
-        this.type = type;
+    public Knife(String bladeMaterial, int length, boolean isSharp) {
+        this.bladeMaterial = bladeMaterial;
         this.length = length;
         this.isSharp = isSharp;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", length=" + length + "cm, isSharp=" + isSharp + "]";
+        return "[bladeMaterial=" + bladeMaterial + ", length=" + length + "cm, isSharp=" + isSharp + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 2700;
     }
 }

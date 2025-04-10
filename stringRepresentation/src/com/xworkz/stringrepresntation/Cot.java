@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Cot {
-
     private String material;
-    private String size;
+    private int legs;
     private boolean hasHeadboard;
 
-    public Cot(String material, String size, boolean hasHeadboard) {
+    public Cot(String material, int legs, boolean hasHeadboard) {
         this.material = material;
-        this.size = size;
+        this.legs = legs;
         this.hasHeadboard = hasHeadboard;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", size=" + size + ", hasHeadboard=" + hasHeadboard + "]";
+        return "[material=" + material + ", legs=" + legs + ", hasHeadboard=" + hasHeadboard + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 1200;
     }
 }

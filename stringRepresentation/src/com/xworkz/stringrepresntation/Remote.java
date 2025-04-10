@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Remote {
+    private String type;
+    private int buttons;
+    private boolean isWireless;
 
-    private String deviceType;
-    private int batteryCount;
-    private boolean isUniversal;
-
-    public Remote(String deviceType, int batteryCount, boolean isUniversal) {
-        this.deviceType = deviceType;
-        this.batteryCount = batteryCount;
-        this.isUniversal = isUniversal;
+    public Remote(String type, int buttons, boolean isWireless) {
+        this.type = type;
+        this.buttons = buttons;
+        this.isWireless = isWireless;
     }
 
     @Override
     public String toString() {
-        return "[deviceType=" + deviceType + ", batteryCount=" + batteryCount + ", isUniversal=" + isUniversal + "]";
+        return "[type=" + type + ", buttons=" + buttons + ", isWireless=" + isWireless + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 4900;
     }
 }

@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Watch {
+    private String type;
+    private String strapMaterial;
+    private boolean isSmart;
 
-    private String brand;
-    private boolean isDigital;
-    private double price;
-
-    public Watch(String brand, boolean isDigital, double price) {
-        this.brand = brand;
-        this.isDigital = isDigital;
-        this.price = price;
+    public Watch(String type, String strapMaterial, boolean isSmart) {
+        this.type = type;
+        this.strapMaterial = strapMaterial;
+        this.isSmart = isSmart;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", isDigital=" + isDigital + ", price=" + price + "]";
+        return "[type=" + type + ", strapMaterial=" + strapMaterial + ", isSmart=" + isSmart + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 7600;
     }
 }

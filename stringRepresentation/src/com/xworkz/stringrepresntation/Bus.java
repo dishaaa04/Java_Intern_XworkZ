@@ -1,20 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Bus {
-
-    private String route;
+    private String number;
     private int capacity;
-    private String driverName;
+    private String route;
 
-    public Bus(String route, int capacity, String driverName) {
-        this.route = route;
+    public Bus(String number, int capacity, String route) {
+        this.number = number;
         this.capacity = capacity;
-        this.driverName = driverName;
+        this.route = route;
     }
 
     @Override
     public String toString() {
-        return "[route=" + route + ", capacity=" + capacity + ", driverName=" + driverName + "]";
+        return "[number=" + number + ", capacity=" + capacity + ", route=" + route + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 360;
     }
 }
-

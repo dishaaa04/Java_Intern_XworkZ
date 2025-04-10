@@ -1,20 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Antenna {
-
     private String type;
     private double frequency;
-    private boolean isDirectional;
+    private int length;
 
-    public Antenna(String type, double frequency, boolean isDirectional) {
+    public Antenna(String type, double frequency, int length) {
         this.type = type;
         this.frequency = frequency;
-        this.isDirectional = isDirectional;
+        this.length = length;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", frequency=" + frequency + ", isDirectional=" + isDirectional + "]";
+        return "[type=" + type + ", frequency=" + frequency + ", length=" + length + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 120;
     }
 }
-

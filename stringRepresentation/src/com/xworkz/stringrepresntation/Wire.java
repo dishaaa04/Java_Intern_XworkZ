@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Wire {
-
-    private String type;
+    private String material;
     private double length;
-    private boolean isCopper;
+    private boolean isInsulated;
 
-    public Wire(String type, double length, boolean isCopper) {
-        this.type = type;
+    public Wire(String material, double length, boolean isInsulated) {
+        this.material = material;
         this.length = length;
-        this.isCopper = isCopper;
+        this.isInsulated = isInsulated;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", length=" + length + "m, isCopper=" + isCopper + "]";
+        return "[material=" + material + ", length=" + length + ", isInsulated=" + isInsulated + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 7900;
     }
 }

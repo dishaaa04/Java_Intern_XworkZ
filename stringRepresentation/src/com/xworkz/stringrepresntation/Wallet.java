@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Wallet {
-
-    private String material;
     private String color;
-    private int compartments;
+    private boolean hasChain;
+    private double price;
 
-    public Wallet(String material, String color, int compartments) {
-        this.material = material;
+    public Wallet(String color, boolean hasChain, double price) {
         this.color = color;
-        this.compartments = compartments;
+        this.hasChain = hasChain;
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", color=" + color + ", compartments=" + compartments + "]";
+        return "[color=" + color + ", hasChain=" + hasChain + ", price=" + price + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 7500;
     }
 }

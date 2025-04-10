@@ -1,20 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Lamp {
-
     private String type;
-    private String color;
-    private boolean isLED;
+    private int wattage;
+    private boolean isRechargeable;
 
-    public Lamp(String type, String color, boolean isLED) {
+    public Lamp(String type, int wattage, boolean isRechargeable) {
         this.type = type;
-        this.color = color;
-        this.isLED = isLED;
+        this.wattage = wattage;
+        this.isRechargeable = isRechargeable;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", color=" + color + ", isLED=" + isLED + "]";
+        return "[type=" + type + ", wattage=" + wattage + "W, isRechargeable=" + isRechargeable + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 2800;
     }
 }
-

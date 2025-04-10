@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Zip {
+    private String fileName;
+    private double sizeMB;
+    private boolean isEncrypted;
 
-    private String material;
-    private double length;
-    private boolean isAutomatic;
-
-    public Zip(String material, double length, boolean isAutomatic) {
-        this.material = material;
-        this.length = length;
-        this.isAutomatic = isAutomatic;
+    public Zip(String fileName, double sizeMB, boolean isEncrypted) {
+        this.fileName = fileName;
+        this.sizeMB = sizeMB;
+        this.isEncrypted = isEncrypted;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", length=" + length + "cm, isAutomatic=" + isAutomatic + "]";
+        return "[fileName=" + fileName + ", sizeMB=" + sizeMB + ", isEncrypted=" + isEncrypted + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 9100;
     }
 }

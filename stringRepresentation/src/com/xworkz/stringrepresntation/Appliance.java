@@ -1,12 +1,11 @@
 package com.xworkz.stringrepresntation;
 
 public class Appliance {
-
     private String brand;
     private String type;
-    private double power;
+    private int power;
 
-    public Appliance(String brand, String type, double power) {
+    public Appliance(String brand, String type, int power) {
         this.brand = brand;
         this.type = type;
         this.power = power;
@@ -14,6 +13,12 @@ public class Appliance {
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", type=" + type + ", power=" + power + "]";
+        return "[brand=" + brand + ", type=" + type + ", power=" + power + "W]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 300;
     }
 }

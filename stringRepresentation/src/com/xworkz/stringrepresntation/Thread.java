@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Thread {
-
     private String color;
-    private String material;
     private double length;
+    private String material;
 
-    public Thread(String color, String material, double length) {
+    public Thread(String color, double length, String material) {
         this.color = color;
-        this.material = material;
         this.length = length;
+        this.material = material;
     }
 
     @Override
     public String toString() {
-        return "[color=" + color + ", material=" + material + ", length=" + length + " meters]";
+        return "[color=" + color + ", length=" + length + ", material=" + material + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 6400;
     }
 }

@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Tubelight {
-
-    private String brand;
     private int wattage;
-    private double length;
+    private String brand;
+    private boolean isLED;
 
-    public Tubelight(String brand, int wattage, double length) {
-        this.brand = brand;
+    public Tubelight(int wattage, String brand, boolean isLED) {
         this.wattage = wattage;
-        this.length = length;
+        this.brand = brand;
+        this.isLED = isLED;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", wattage=" + wattage + "W, length=" + length + "ft]";
+        return "[wattage=" + wattage + ", brand=" + brand + ", isLED=" + isLED + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 6900;
     }
 }

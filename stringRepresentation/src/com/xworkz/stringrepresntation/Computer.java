@@ -1,7 +1,6 @@
 package com.xworkz.stringrepresntation;
 
 public class Computer {
-
     private String brand;
     private int ram;
     private String processor;
@@ -15,5 +14,11 @@ public class Computer {
     @Override
     public String toString() {
         return "[brand=" + brand + ", ram=" + ram + "GB, processor=" + processor + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 999;
     }
 }

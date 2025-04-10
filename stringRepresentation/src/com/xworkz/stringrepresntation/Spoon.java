@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Spoon {
-
     private String material;
-    private String size;
-    private boolean isDisposable;
+    private String type;
+    private double length;
 
-    public Spoon(String material, String size, boolean isDisposable) {
+    public Spoon(String material, String type, double length) {
         this.material = material;
-        this.size = size;
-        this.isDisposable = isDisposable;
+        this.type = type;
+        this.length = length;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", size=" + size + ", isDisposable=" + isDisposable + "]";
+        return "[material=" + material + ", type=" + type + ", length=" + length + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 5800;
     }
 }

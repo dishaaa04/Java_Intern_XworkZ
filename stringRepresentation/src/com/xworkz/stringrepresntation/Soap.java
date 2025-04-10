@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Soap {
-
-    private String brand;
     private String fragrance;
     private double weight;
+    private boolean isMedicated;
 
-    public Soap(String brand, String fragrance, double weight) {
-        this.brand = brand;
+    public Soap(String fragrance, double weight, boolean isMedicated) {
         this.fragrance = fragrance;
         this.weight = weight;
+        this.isMedicated = isMedicated;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", fragrance=" + fragrance + ", weight=" + weight + "g]";
+        return "[fragrance=" + fragrance + ", weight=" + weight + ", isMedicated=" + isMedicated + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 5500;
     }
 }

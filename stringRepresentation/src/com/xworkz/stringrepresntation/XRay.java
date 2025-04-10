@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class XRay {
-
     private String bodyPart;
-    private String type;
     private boolean isDigital;
+    private double cost;
 
-    public XRay(String bodyPart, String type, boolean isDigital) {
+    public XRay(String bodyPart, boolean isDigital, double cost) {
         this.bodyPart = bodyPart;
-        this.type = type;
         this.isDigital = isDigital;
+        this.cost = cost;
     }
 
     @Override
     public String toString() {
-        return "[bodyPart=" + bodyPart + ", type=" + type + ", isDigital=" + isDigital + "]";
+        return "[bodyPart=" + bodyPart + ", isDigital=" + isDigital + ", cost=" + cost + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 8100;
     }
 }

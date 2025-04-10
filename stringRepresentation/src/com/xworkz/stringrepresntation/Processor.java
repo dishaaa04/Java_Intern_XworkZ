@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Processor {
-
-    private String model;
+    private String brand;
     private int cores;
-    private double clockSpeed;
+    private double speed;
 
-    public Processor(String model, int cores, double clockSpeed) {
-        this.model = model;
+    public Processor(String brand, int cores, double speed) {
+        this.brand = brand;
         this.cores = cores;
-        this.clockSpeed = clockSpeed;
+        this.speed = speed;
     }
 
     @Override
     public String toString() {
-        return "[model=" + model + ", cores=" + cores + ", clockSpeed=" + clockSpeed + "GHz]";
+        return "[brand=" + brand + ", cores=" + cores + ", speed=" + speed + "GHz]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 4600;
     }
 }

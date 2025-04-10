@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Pan {
-
     private String material;
-    private double diameter;
-    private boolean isNonStick;
+    private int diameter;
+    private boolean hasLid;
 
-    public Pan(String material, double diameter, boolean isNonStick) {
+    public Pan(String material, int diameter, boolean hasLid) {
         this.material = material;
         this.diameter = diameter;
-        this.isNonStick = isNonStick;
+        this.hasLid = hasLid;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", diameter=" + diameter + "cm, isNonStick=" + isNonStick + "]";
+        return "[material=" + material + ", diameter=" + diameter + ", hasLid=" + hasLid + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 4100;
     }
 }

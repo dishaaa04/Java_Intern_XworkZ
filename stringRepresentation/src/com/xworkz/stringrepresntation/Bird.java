@@ -1,7 +1,6 @@
 package com.xworkz.stringrepresntation;
 
 public class Bird {
-
     private String name;
     private String color;
     private boolean canFly;
@@ -15,5 +14,11 @@ public class Bird {
     @Override
     public String toString() {
         return "[name=" + name + ", color=" + color + ", canFly=" + canFly + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 220;
     }
 }

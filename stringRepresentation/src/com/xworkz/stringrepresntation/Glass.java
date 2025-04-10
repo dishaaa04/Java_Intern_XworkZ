@@ -1,19 +1,24 @@
 package com.xworkz.stringrepresntation;
 
 public class Glass {
-
     private String type;
-    private double capacity;
-    private boolean isTransparent;
+    private int thickness;
+    private boolean isTempered;
 
-    public Glass(String type, double capacity, boolean isTransparent) {
+    public Glass(String type, int thickness, boolean isTempered) {
         this.type = type;
-        this.capacity = capacity;
-        this.isTransparent = isTransparent;
+        this.thickness = thickness;
+        this.isTempered = isTempered;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", capacity=" + capacity + "ml, isTransparent=" + isTransparent + "]";
+        return "[type=" + type + ", thickness=" + thickness + "mm, isTempered=" + isTempered + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("value " + super.hashCode());
+        return 2000;
     }
 }
