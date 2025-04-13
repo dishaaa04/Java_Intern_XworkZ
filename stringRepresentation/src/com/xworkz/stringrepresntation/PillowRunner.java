@@ -2,15 +2,16 @@ package com.xworkz.stringrepresntation;
 
 public class PillowRunner {
     public static void main(String[] args) {
-        Pillow pillow = new Pillow("Cotton", "King", true);
-        System.out.println("pillow = " + pillow.toString());
+        Pillow pillow1 = new Pillow();
+        pillow1.setShape("Square");
+        pillow1.setFabric("Cotton");
 
-        int code = pillow.hashCode();
-        System.out.println("value using ref = " + code);
+        Pillow pillow2 = new Pillow();
+        pillow2.setShape("Square");
+        pillow2.setFabric("Cotton");
 
-        System.out.println("hash code sets");
-        System.out.println("sleep = " + "sleep".hashCode());
-        System.out.println("rest = " + "rest".hashCode());
-        System.out.println("nap = " + "nap".hashCode());
+        System.out.println("Checking same location: " + (pillow1 == pillow2));
+        boolean same = pillow1.equals(pillow2);
+        System.out.println("pillow1 is same as pillow2: " + same);
     }
 }

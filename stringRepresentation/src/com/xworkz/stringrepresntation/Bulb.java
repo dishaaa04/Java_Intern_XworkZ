@@ -1,24 +1,34 @@
 package com.xworkz.stringrepresntation;
 
 public class Bulb {
-    private int wattage;
-    private String type;
-    private boolean isLED;
+    private String wattage;
 
-    public Bulb(int wattage, String type, boolean isLED) {
+    public String getWattage() {
+        return wattage;
+    }
+
+    public void setWattage(String wattage) {
         this.wattage = wattage;
-        this.type = type;
-        this.isLED = isLED;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Bulb) {
+                Bulb other = (Bulb) obj;
+                return this.wattage.equals(other.wattage);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[wattage=" + wattage + ", type=" + type + ", isLED=" + isLED + "]";
+        return "Bulb{wattage='" + wattage + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 211;
+        return wattage.hashCode();
     }
 }

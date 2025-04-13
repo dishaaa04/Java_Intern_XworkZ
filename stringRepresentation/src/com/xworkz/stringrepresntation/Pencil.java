@@ -2,23 +2,40 @@ package com.xworkz.stringrepresntation;
 
 public class Pencil {
     private String brand;
-    private String type;
-    private boolean isSharpened;
+    private String hardness;
 
-    public Pencil(String brand, String type, boolean isSharpened) {
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
         this.brand = brand;
-        this.type = type;
-        this.isSharpened = isSharpened;
+    }
+
+    public String getHardness() {
+        return hardness;
+    }
+
+    public void setHardness(String hardness) {
+        this.hardness = hardness;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Pencil) {
+            Pencil other = (Pencil) obj;
+            return this.brand.equals(other.brand) && this.hardness.equals(other.hardness);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", type=" + type + ", isSharpened=" + isSharpened + "]";
+        return "Pencil{brand='" + brand + "', hardness='" + hardness + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 4200;
+        return brand.hashCode() + hardness.hashCode();
     }
 }

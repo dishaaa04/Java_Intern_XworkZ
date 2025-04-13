@@ -2,15 +2,15 @@ package com.xworkz.stringrepresntation;
 
 public class ChairRunner {
     public static void main(String[] args) {
-        Chair chair = new Chair("Plastic", "Dining", true);
-        System.out.println("chair = " + chair.toString());
 
-        int code = chair.hashCode();
-        System.out.println("value using ref = " + code);
+        Chair chair1 = new Chair();
+        chair1.setMaterial("Wood");
 
-        System.out.println("hash code sets");
-        System.out.println("leg = " + "leg".hashCode());
-        System.out.println("backrest = " + "backrest".hashCode());
-        System.out.println("armrest = " + "armrest".hashCode());
+        Chair chair2 = new Chair();
+        chair2.setMaterial("Wood");
+
+        System.out.println("Checking same location: " + (chair1 == chair2));
+        boolean same = chair1.equals(chair2);
+        System.out.println("chair1 is same as chair2: " + same);
     }
 }

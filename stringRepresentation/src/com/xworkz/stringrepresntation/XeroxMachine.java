@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class XeroxMachine {
     private String brand;
-    private boolean isColor;
-    private int capacity;
 
-    public XeroxMachine(String brand, boolean isColor, int capacity) {
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
         this.brand = brand;
-        this.isColor = isColor;
-        this.capacity = capacity;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof XeroxMachine) {
+            XeroxMachine other = (XeroxMachine) obj;
+            return this.brand.equals(other.brand);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", isColor=" + isColor + ", capacity=" + capacity + "]";
+        return "XeroxMachine{brand='" + brand + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 8000;
+        return brand.hashCode();
     }
 }

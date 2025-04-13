@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class WallClock {
     private String shape;
-    private String brand;
-    private boolean isDigital;
 
-    public WallClock(String shape, String brand, boolean isDigital) {
+    public String getShape() {
+        return shape;
+    }
+
+    public void setShape(String shape) {
         this.shape = shape;
-        this.brand = brand;
-        this.isDigital = isDigital;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof WallClock) {
+            WallClock other = (WallClock) obj;
+            return this.shape.equals(other.shape);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[shape=" + shape + ", brand=" + brand + ", isDigital=" + isDigital + "]";
+        return "WallClock{shape='" + shape + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 7400;
+        return shape.hashCode();
     }
 }

@@ -1,24 +1,34 @@
 package com.xworkz.stringrepresntation;
 
 public class Cot {
-    private String material;
-    private int legs;
-    private boolean hasHeadboard;
+    private String woodType;
 
-    public Cot(String material, int legs, boolean hasHeadboard) {
-        this.material = material;
-        this.legs = legs;
-        this.hasHeadboard = hasHeadboard;
+    public String getWoodType() {
+        return woodType;
+    }
+
+    public void setWoodType(String woodType) {
+        this.woodType = woodType;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Cot) {
+                Cot other = (Cot) obj;
+                return this.woodType.equals(other.woodType);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", legs=" + legs + ", hasHeadboard=" + hasHeadboard + "]";
+        return "Cot{woodType='" + woodType + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 1200;
+        return woodType.hashCode();
     }
 }

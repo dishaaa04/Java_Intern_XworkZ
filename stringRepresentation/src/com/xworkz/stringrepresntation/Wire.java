@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class Wire {
     private String material;
-    private double length;
-    private boolean isInsulated;
 
-    public Wire(String material, double length, boolean isInsulated) {
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
         this.material = material;
-        this.length = length;
-        this.isInsulated = isInsulated;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Wire) {
+            Wire other = (Wire) obj;
+            return this.material.equals(other.material);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", length=" + length + ", isInsulated=" + isInsulated + "]";
+        return "Wire{material='" + material + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 7900;
+        return material.hashCode();
     }
 }

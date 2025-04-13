@@ -2,23 +2,40 @@ package com.xworkz.stringrepresntation;
 
 public class OperatingSystem {
     private String name;
-    private String version;
-    private boolean isOpenSource;
+    private int version;
 
-    public OperatingSystem(String name, String version, boolean isOpenSource) {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
         this.version = version;
-        this.isOpenSource = isOpenSource;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof OperatingSystem) {
+            OperatingSystem other = (OperatingSystem) obj;
+            return this.name.equals(other.name) && this.version == other.version;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[name=" + name + ", version=" + version + ", isOpenSource=" + isOpenSource + "]";
+        return "OperatingSystem{name='" + name + "', version=" + version + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 3800;
+        return name.hashCode() + version;
     }
 }

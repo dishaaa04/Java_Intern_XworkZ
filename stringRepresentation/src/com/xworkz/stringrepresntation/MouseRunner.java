@@ -2,15 +2,17 @@ package com.xworkz.stringrepresntation;
 
 public class MouseRunner {
     public static void main(String[] args) {
-        Mouse mouse = new Mouse("Optical", true, 1600);
-        System.out.println("mouse = " + mouse.toString());
 
-        int code = mouse.hashCode();
-        System.out.println("value using ref = " + code);
+        Mouse mouse1 = new Mouse();
+        mouse1.setType("Optical");
+        mouse1.setWireless(true);
 
-        System.out.println("hash code sets");
-        System.out.println("scroll = " + "scroll".hashCode());
-        System.out.println("button = " + "button".hashCode());
-        System.out.println("sensor = " + "sensor".hashCode());
+        Mouse mouse2 = new Mouse();
+        mouse2.setType("Optical");
+        mouse2.setWireless(true);
+
+        System.out.println("Checking same location: " + (mouse1 == mouse2));
+        boolean same = mouse1.equals(mouse2);
+        System.out.println("mouse1 is same as mouse2: " + same);
     }
 }

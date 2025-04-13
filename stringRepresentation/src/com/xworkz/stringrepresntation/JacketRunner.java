@@ -2,15 +2,17 @@ package com.xworkz.stringrepresntation;
 
 public class JacketRunner {
     public static void main(String[] args) {
-        Jacket jacket = new Jacket("Leather", "L", false);
-        System.out.println("jacket = " + jacket.toString());
 
-        int code = jacket.hashCode();
-        System.out.println("value using ref = " + code);
+        Jacket jacket1 = new Jacket();
+        jacket1.setMaterial("Leather");
+        jacket1.setColor("Brown");
 
-        System.out.println("hash code sets");
-        System.out.println("zipper = " + "zipper".hashCode());
-        System.out.println("hood = " + "hood".hashCode());
-        System.out.println("pocket = " + "pocket".hashCode());
+        Jacket jacket2 = new Jacket();
+        jacket2.setMaterial("Leather");
+        jacket2.setColor("Brown");
+
+        System.out.println("Checking same location: " + (jacket1 == jacket2));
+        boolean same = jacket1.equals(jacket2);
+        System.out.println("jacket1 is same as jacket2: " + same);
     }
 }

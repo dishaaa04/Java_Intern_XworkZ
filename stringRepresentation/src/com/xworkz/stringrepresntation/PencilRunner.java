@@ -2,15 +2,16 @@ package com.xworkz.stringrepresntation;
 
 public class PencilRunner {
     public static void main(String[] args) {
-        Pencil pencil = new Pencil("Apsara", "HB", true);
-        System.out.println("pencil = " + pencil.toString());
+        Pencil pencil1 = new Pencil();
+        pencil1.setBrand("Nataraj");
+        pencil1.setHardness("HB");
 
-        int code = pencil.hashCode();
-        System.out.println("value using ref = " + code);
+        Pencil pencil2 = new Pencil();
+        pencil2.setBrand("Nataraj");
+        pencil2.setHardness("HB");
 
-        System.out.println("hash code sets");
-        System.out.println("write = " + "write".hashCode());
-        System.out.println("draw = " + "draw".hashCode());
-        System.out.println("erase = " + "erase".hashCode());
+        System.out.println("Checking same location: " + (pencil1 == pencil2));
+        boolean same = pencil1.equals(pencil2);
+        System.out.println("pencil1 is same as pencil2: " + same);
     }
 }

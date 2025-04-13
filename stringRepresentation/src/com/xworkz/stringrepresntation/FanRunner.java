@@ -2,15 +2,17 @@ package com.xworkz.stringrepresntation;
 
 public class FanRunner {
     public static void main(String[] args) {
-        Fan fan = new Fan("Usha", 5, true);
-        System.out.println("fan = " + fan.toString());
 
-        int code = fan.hashCode();
-        System.out.println("value using ref = " + code);
+        Fan fan1 = new Fan();
+        fan1.setBrand("Usha");
+        fan1.setSpeed(1200);
 
-        System.out.println("hash code sets");
-        System.out.println("blades = " + "blades".hashCode());
-        System.out.println("motor = " + "motor".hashCode());
-        System.out.println("swing = " + "swing".hashCode());
+        Fan fan2 = new Fan();
+        fan2.setBrand("Usha");
+        fan2.setSpeed(1200);
+
+        System.out.println("Checking same location: " + (fan1 == fan2));
+        boolean same = fan1.equals(fan2);
+        System.out.println("fan1 is same as fan2: " + same);
     }
 }

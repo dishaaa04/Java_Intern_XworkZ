@@ -1,24 +1,41 @@
 package com.xworkz.stringrepresntation;
 
 public class Glass {
-    private String type;
-    private int thickness;
-    private boolean isTempered;
+    private String shape;
+    private String usage;
 
-    public Glass(String type, int thickness, boolean isTempered) {
-        this.type = type;
-        this.thickness = thickness;
-        this.isTempered = isTempered;
+    public String getShape() {
+        return shape;
+    }
+
+    public void setShape(String shape) {
+        this.shape = shape;
+    }
+
+    public String getUsage() {
+        return usage;
+    }
+
+    public void setUsage(String usage) {
+        this.usage = usage;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Glass) {
+            Glass other = (Glass) obj;
+            return this.shape.equals(other.shape) && this.usage.equals(other.usage);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", thickness=" + thickness + "mm, isTempered=" + isTempered + "]";
+        return "Glass{shape='" + shape + "', usage='" + usage + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 2000;
+        return shape.hashCode() + usage.hashCode();
     }
 }

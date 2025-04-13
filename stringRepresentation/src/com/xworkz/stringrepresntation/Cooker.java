@@ -1,24 +1,34 @@
 package com.xworkz.stringrepresntation;
 
 public class Cooker {
-    private String type;
-    private int capacity;
-    private boolean isElectric;
+    private String brand;
 
-    public Cooker(String type, int capacity, boolean isElectric) {
-        this.type = type;
-        this.capacity = capacity;
-        this.isElectric = isElectric;
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Cooker) {
+                Cooker other = (Cooker) obj;
+                return this.brand.equals(other.brand);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", capacity=" + capacity + "L, isElectric=" + isElectric + "]";
+        return "Cooker{brand='" + brand + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 1100;
+        return brand.hashCode();
     }
 }

@@ -2,15 +2,18 @@ package com.xworkz.stringrepresntation;
 
 public class ScissorsRunner {
     public static void main(String[] args) {
-        Scissors scissors = new Scissors("Fiskars", 6.5, true);
-        System.out.println("scissors = " + scissors.toString());
+        Scissors sc1 = new Scissors();
+        sc1.setBrand("Cello");
+        sc1.setLength(8.5);
+        sc1.setSharp(true);
 
-        int code = scissors.hashCode();
-        System.out.println("value using ref = " + code);
+        Scissors sc2 = new Scissors();
+        sc2.setBrand("Cello");
+        sc2.setLength(8.5);
+        sc2.setSharp(true);
 
-        System.out.println("hash code sets");
-        System.out.println("cut = " + "cut".hashCode());
-        System.out.println("sharp = " + "sharp".hashCode());
-        System.out.println("blade = " + "blade".hashCode());
+        System.out.println("Checking same location: " + (sc1 == sc2));
+        boolean same = sc1.equals(sc2);
+        System.out.println("sc1 is same as sc2: " + same);
     }
 }

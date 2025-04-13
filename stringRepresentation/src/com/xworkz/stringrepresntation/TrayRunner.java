@@ -2,15 +2,18 @@ package com.xworkz.stringrepresntation;
 
 public class TrayRunner {
     public static void main(String[] args) {
-        Tray tray = new Tray("Plastic", 3, true);
-        System.out.println("tray = " + tray.toString());
+        Tray tray1 = new Tray();
+        tray1.setMaterial("Plastic");
+        tray1.setShape("Rectangle");
+        tray1.setCompartments(5);
 
-        int code = tray.hashCode();
-        System.out.println("value using ref = " + code);
+        Tray tray2 = new Tray();
+        tray2.setMaterial("Plastic");
+        tray2.setShape("Rectangle");
+        tray2.setCompartments(5);
 
-        System.out.println("hash code sets");
-        System.out.println("food = " + "food".hashCode());
-        System.out.println("serve = " + "serve".hashCode());
-        System.out.println("dish = " + "dish".hashCode());
+        System.out.println("Checking same location: " + (tray1 == tray2));
+        boolean same = tray1.equals(tray2);
+        System.out.println("tray1 is same as tray2: " + same);
     }
 }

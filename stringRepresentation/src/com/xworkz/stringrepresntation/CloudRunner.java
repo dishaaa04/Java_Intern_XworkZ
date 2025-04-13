@@ -2,15 +2,15 @@ package com.xworkz.stringrepresntation;
 
 public class CloudRunner {
     public static void main(String[] args) {
-        Cloud cloud = new Cloud("Cumulus", 2.5, true);
-        System.out.println("cloud = " + cloud.toString());
 
-        int code = cloud.hashCode();
-        System.out.println("value using ref = " + code);
+        Cloud cloud1 = new Cloud();
+        cloud1.setProvider("AWS");
 
-        System.out.println("hash code sets");
-        System.out.println("rain = " + "rain".hashCode());
-        System.out.println("fog = " + "fog".hashCode());
-        System.out.println("sky = " + "sky".hashCode());
+        Cloud cloud2 = new Cloud();
+        cloud2.setProvider("AWS");
+
+        System.out.println("Checking same location: " + (cloud1 == cloud2));
+        boolean same = cloud1.equals(cloud2);
+        System.out.println("cloud1 is same as cloud2: " + same);
     }
 }

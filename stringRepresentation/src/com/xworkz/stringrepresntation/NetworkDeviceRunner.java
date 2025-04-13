@@ -2,15 +2,16 @@ package com.xworkz.stringrepresntation;
 
 public class NetworkDeviceRunner {
     public static void main(String[] args) {
-        NetworkDevice device = new NetworkDevice("Router", "192.168.1.1", true);
-        System.out.println("networkDevice = " + device.toString());
+        NetworkDevice device1 = new NetworkDevice();
+        device1.setName("Router");
+        device1.setIpAddress("192.168.0.1");
 
-        int code = device.hashCode();
-        System.out.println("value using ref = " + code);
+        NetworkDevice device2 = new NetworkDevice();
+        device2.setName("Router");
+        device2.setIpAddress("192.168.0.1");
 
-        System.out.println("hash code sets");
-        System.out.println("modem = " + "modem".hashCode());
-        System.out.println("ethernet = " + "ethernet".hashCode());
-        System.out.println("ping = " + "ping".hashCode());
+        System.out.println("Checking same location: " + (device1 == device2));
+        boolean same = device1.equals(device2);
+        System.out.println("device1 is same as device2: " + same);
     }
 }

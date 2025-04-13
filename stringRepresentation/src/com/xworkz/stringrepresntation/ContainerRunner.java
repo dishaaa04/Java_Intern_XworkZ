@@ -2,15 +2,15 @@ package com.xworkz.stringrepresntation;
 
 public class ContainerRunner {
     public static void main(String[] args) {
-        Container container = new Container("Steel", 5.0, true);
-        System.out.println("container = " + container.toString());
 
-        int code = container.hashCode();
-        System.out.println("value using ref = " + code);
+        Container container1 = new Container();
+        container1.setMaterial("Plastic");
 
-        System.out.println("hash code sets");
-        System.out.println("jar = " + "jar".hashCode());
-        System.out.println("box = " + "box".hashCode());
-        System.out.println("bottle = " + "bottle".hashCode());
+        Container container2 = new Container();
+        container2.setMaterial("Plastic");
+
+        System.out.println("Checking same location: " + (container1 == container2));
+        boolean same = container1.equals(container2);
+        System.out.println("container1 is same as container2: " + same);
     }
 }

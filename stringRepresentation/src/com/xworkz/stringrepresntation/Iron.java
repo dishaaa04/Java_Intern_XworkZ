@@ -2,23 +2,40 @@ package com.xworkz.stringrepresntation;
 
 public class Iron {
     private String brand;
-    private int wattage;
-    private boolean isSteamIron;
+    private String type;
 
-    public Iron(String brand, int wattage, boolean isSteamIron) {
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
         this.brand = brand;
-        this.wattage = wattage;
-        this.isSteamIron = isSteamIron;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Iron) {
+            Iron other = (Iron) obj;
+            return this.brand.equals(other.brand) && this.type.equals(other.type);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", wattage=" + wattage + "W, isSteamIron=" + isSteamIron + "]";
+        return "Iron{brand='" + brand + "', type='" + type + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 2200;
+        return brand.hashCode() + type.hashCode();
     }
 }

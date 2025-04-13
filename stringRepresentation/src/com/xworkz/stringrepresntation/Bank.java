@@ -1,24 +1,32 @@
 package com.xworkz.stringrepresntation;
 
 public class Bank {
-    private String name;
-    private String location;
-    private int branches;
+    private String bankName;
 
-    public Bank(String name, String location, int branches) {
-        this.name = name;
-        this.location = location;
-        this.branches = branches;
+    public String getBankName() {
+        return bankName;
+    }
+
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Bank) {
+            Bank other = (Bank) obj;
+            return this.bankName.equals(other.bankName);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[name=" + name + ", location=" + location + ", branches=" + branches + "]";
+        return "Bank{bankName='" + bankName + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 500;
+        return bankName.hashCode();
     }
 }

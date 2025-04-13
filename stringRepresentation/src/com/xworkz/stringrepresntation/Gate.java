@@ -2,23 +2,40 @@ package com.xworkz.stringrepresntation;
 
 public class Gate {
     private String material;
-    private double height;
-    private boolean isAutomatic;
+    private String type;
 
-    public Gate(String material, double height, boolean isAutomatic) {
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
         this.material = material;
-        this.height = height;
-        this.isAutomatic = isAutomatic;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Gate) {
+            Gate other = (Gate) obj;
+            return this.material.equals(other.material) && this.type.equals(other.type);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", height=" + height + "ft, isAutomatic=" + isAutomatic + "]";
+        return "Gate{material='" + material + "', type='" + type + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 1900;
+        return material.hashCode() + type.hashCode();
     }
 }

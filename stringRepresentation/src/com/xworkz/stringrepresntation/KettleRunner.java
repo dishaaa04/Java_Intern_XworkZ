@@ -2,15 +2,17 @@ package com.xworkz.stringrepresntation;
 
 public class KettleRunner {
     public static void main(String[] args) {
-        Kettle kettle = new Kettle("Prestige", 1500, true);
-        System.out.println("kettle = " + kettle.toString());
 
-        int code = kettle.hashCode();
-        System.out.println("value using ref = " + code);
+        Kettle kettle1 = new Kettle();
+        kettle1.setBrand("Prestige");
+        kettle1.setCapacity(1500);
 
-        System.out.println("hash code sets");
-        System.out.println("boil = " + "boil".hashCode());
-        System.out.println("steam = " + "steam".hashCode());
-        System.out.println("cordless = " + "cordless".hashCode());
+        Kettle kettle2 = new Kettle();
+        kettle2.setBrand("Prestige");
+        kettle2.setCapacity(1500);
+
+        System.out.println("Checking same location: " + (kettle1 == kettle2));
+        boolean same = kettle1.equals(kettle2);
+        System.out.println("kettle1 is same as kettle2: " + same);
     }
 }

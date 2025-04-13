@@ -2,15 +2,16 @@ package com.xworkz.stringrepresntation;
 
 public class PaintRunner {
     public static void main(String[] args) {
-        Paint paint = new Paint("Red", "Acrylic", 150.75);
-        System.out.println("paint = " + paint.toString());
+        Paint paint1 = new Paint();
+        paint1.setColor("Blue");
+        paint1.setFinish("Matte");
 
-        int code = paint.hashCode();
-        System.out.println("value using ref = " + code);
+        Paint paint2 = new Paint();
+        paint2.setColor("Blue");
+        paint2.setFinish("Matte");
 
-        System.out.println("hash code sets");
-        System.out.println("brush = " + "brush".hashCode());
-        System.out.println("canvas = " + "canvas".hashCode());
-        System.out.println("shade = " + "shade".hashCode());
+        System.out.println("Checking same location: " + (paint1 == paint2));
+        boolean same = paint1.equals(paint2);
+        System.out.println("paint1 is same as paint2: " + same);
     }
 }

@@ -2,23 +2,40 @@ package com.xworkz.stringrepresntation;
 
 public class Fan {
     private String brand;
-    private int speedLevels;
-    private boolean isCeilingFan;
+    private int speed;
 
-    public Fan(String brand, int speedLevels, boolean isCeilingFan) {
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
         this.brand = brand;
-        this.speedLevels = speedLevels;
-        this.isCeilingFan = isCeilingFan;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Fan) {
+            Fan other = (Fan) obj;
+            return this.brand.equals(other.brand) && this.speed == other.speed;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", speedLevels=" + speedLevels + ", isCeilingFan=" + isCeilingFan + "]";
+        return "Fan{brand='" + brand + "', speed=" + speed + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 1700;
+        return brand.hashCode() + speed;
     }
 }

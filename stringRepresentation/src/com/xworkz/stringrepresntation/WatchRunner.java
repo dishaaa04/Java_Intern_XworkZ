@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class WatchRunner {
     public static void main(String[] args) {
-        Watch watch = new Watch("Analog", "Leather", false);
-        System.out.println("watch = " + watch.toString());
+        Watch w1 = new Watch();
+        w1.setBrand("Fastrack");
 
-        int code = watch.hashCode();
-        System.out.println("value using ref = " + code);
+        Watch w2 = new Watch();
+        w2.setBrand("Fastrack");
 
-        System.out.println("hash code sets");
-        System.out.println("dial = " + "dial".hashCode());
-        System.out.println("strap = " + "strap".hashCode());
-        System.out.println("tick = " + "tick".hashCode());
+        System.out.println("Checking same location: " + (w1 == w2));
+        boolean same = w1.equals(w2);
+        System.out.println("w1 is same as w2: " + same);
     }
 }

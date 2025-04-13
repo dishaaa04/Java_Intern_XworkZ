@@ -1,24 +1,41 @@
 package com.xworkz.stringrepresntation;
 
 public class Phone {
-    private String brand;
     private String model;
-    private double screenSize;
+    private int price;
 
-    public Phone(String brand, String model, double screenSize) {
-        this.brand = brand;
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
         this.model = model;
-        this.screenSize = screenSize;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Phone) {
+            Phone other = (Phone) obj;
+            return this.model.equals(other.model) && this.price == other.price;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", model=" + model + ", screenSize=" + screenSize + "]";
+        return "Phone{model='" + model + "', price=" + price + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 4300;
+        return model.hashCode() + price;
     }
 }

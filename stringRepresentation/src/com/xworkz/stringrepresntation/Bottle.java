@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class Bottle {
     private String material;
-    private double capacity;
-    private boolean isReusable;
 
-    public Bottle(String material, double capacity, boolean isReusable) {
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
         this.material = material;
-        this.capacity = capacity;
-        this.isReusable = isReusable;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Bottle) {
+            Bottle other = (Bottle) obj;
+            return this.material.equals(other.material);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", capacity=" + capacity + "L, isReusable=" + isReusable + "]";
+        return "Bottle{material='" + material + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 301;
+        return material.hashCode();
     }
 }

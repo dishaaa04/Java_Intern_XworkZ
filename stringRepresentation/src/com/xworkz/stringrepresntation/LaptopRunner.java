@@ -2,15 +2,17 @@ package com.xworkz.stringrepresntation;
 
 public class LaptopRunner {
     public static void main(String[] args) {
-        Laptop laptop = new Laptop("Dell", "Intel i7", 16);
-        System.out.println("laptop = " + laptop.toString());
 
-        int code = laptop.hashCode();
-        System.out.println("value using ref = " + code);
+        Laptop laptop1 = new Laptop();
+        laptop1.setBrand("Dell");
+        laptop1.setRam(16);
 
-        System.out.println("hash code sets");
-        System.out.println("keyboard = " + "keyboard".hashCode());
-        System.out.println("screen = " + "screen".hashCode());
-        System.out.println("battery = " + "battery".hashCode());
+        Laptop laptop2 = new Laptop();
+        laptop2.setBrand("Dell");
+        laptop2.setRam(16);
+
+        System.out.println("Checking same location: " + (laptop1 == laptop2));
+        boolean same = laptop1.equals(laptop2);
+        System.out.println("laptop1 is same as laptop2: " + same);
     }
 }

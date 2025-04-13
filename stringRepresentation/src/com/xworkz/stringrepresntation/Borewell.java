@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class Borewell {
     private String location;
-    private int depth;
-    private boolean isWorking;
 
-    public Borewell(String location, int depth, boolean isWorking) {
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
         this.location = location;
-        this.depth = depth;
-        this.isWorking = isWorking;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Borewell) {
+            Borewell other = (Borewell) obj;
+            return this.location.equals(other.location);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[location=" + location + ", depth=" + depth + ", isWorking=" + isWorking + "]";
+        return "Borewell{location='" + location + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 385;
+        return location.hashCode();
     }
 }

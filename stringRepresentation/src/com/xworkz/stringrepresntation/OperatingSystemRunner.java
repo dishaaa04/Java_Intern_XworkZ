@@ -2,15 +2,16 @@ package com.xworkz.stringrepresntation;
 
 public class OperatingSystemRunner {
     public static void main(String[] args) {
-        OperatingSystem os = new OperatingSystem("Linux", "Ubuntu 22.04", true);
-        System.out.println("operatingSystem = " + os.toString());
+        OperatingSystem os1 = new OperatingSystem();
+        os1.setName("Windows");
+        os1.setVersion(11);
 
-        int code = os.hashCode();
-        System.out.println("value using ref = " + code);
+        OperatingSystem os2 = new OperatingSystem();
+        os2.setName("Windows");
+        os2.setVersion(11);
 
-        System.out.println("hash code sets");
-        System.out.println("kernel = " + "kernel".hashCode());
-        System.out.println("GUI = " + "GUI".hashCode());
-        System.out.println("terminal = " + "terminal".hashCode());
+        System.out.println("Checking same location: " + (os1 == os2));
+        boolean same = os1.equals(os2);
+        System.out.println("os1 is same as os2: " + same);
     }
 }

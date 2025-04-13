@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class XeroxMachineRunner {
     public static void main(String[] args) {
-        XeroxMachine machine = new XeroxMachine("Canon", true, 300);
-        System.out.println("xeroxMachine = " + machine.toString());
+        XeroxMachine x1 = new XeroxMachine();
+        x1.setBrand("Canon");
 
-        int code = machine.hashCode();
-        System.out.println("value using ref = " + code);
+        XeroxMachine x2 = new XeroxMachine();
+        x2.setBrand("Canon");
 
-        System.out.println("hash code sets");
-        System.out.println("copy = " + "copy".hashCode());
-        System.out.println("paper = " + "paper".hashCode());
-        System.out.println("ink = " + "ink".hashCode());
+        System.out.println("Checking same location: " + (x1 == x2));
+        boolean same = x1.equals(x2);
+        System.out.println("x1 is same as x2: " + same);
     }
 }

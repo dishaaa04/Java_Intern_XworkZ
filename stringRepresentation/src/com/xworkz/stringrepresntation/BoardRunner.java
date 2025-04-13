@@ -2,21 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class BoardRunner {
     public static void main(String[] args) {
-        Board board = new Board("Wood", "Notice", 30);
-        String boardString = board.toString();
-        System.out.println("board = " + boardString);
 
-        int code = board.hashCode();
-        System.out.println("value using ref = " + code);
+        Board board1 = new Board();
+        board1.setMaterial("Whiteboard");
 
-        System.out.println("hash code sets");
-        String value = "chalk";
-        System.out.println("chalk = " + value.hashCode());
+        Board board2 = new Board();
+        board2.setMaterial("Whiteboard");
 
-        String value2 = "marker";
-        System.out.println("marker = " + value2.hashCode());
-
-        String value3 = "eraser";
-        System.out.println("eraser = " + value3.hashCode());
+        System.out.println("Checking same location: " + (board1 == board2));
+        System.out.println("board1 is same as board2: " + board1.equals(board2));
     }
 }

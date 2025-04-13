@@ -1,24 +1,35 @@
 package com.xworkz.stringrepresntation;
 
-public class Button {
-    private String shape;
-    private String color;
-    private boolean isClickable;
 
-    public Button(String shape, String color, boolean isClickable) {
-        this.shape = shape;
+public class Button {
+    private String color;
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
         this.color = color;
-        this.isClickable = isClickable;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Button) {
+                Button other = (Button) obj;
+                return this.color.equals(other.color);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[shape=" + shape + ", color=" + color + ", isClickable=" + isClickable + "]";
+        return "Button{color='" + color + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 111;
+        return color.hashCode();
     }
 }

@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class Board {
     private String material;
-    private String usage;
-    private int size;
 
-    public Board(String material, String usage, int size) {
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
         this.material = material;
-        this.usage = usage;
-        this.size = size;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Board) {
+            Board other = (Board) obj;
+            return this.material.equals(other.material);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", usage=" + usage + ", size=" + size + "]";
+        return "Board{material='" + material + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 145;
+        return material.hashCode();
     }
 }

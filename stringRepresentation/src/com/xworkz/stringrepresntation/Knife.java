@@ -1,24 +1,41 @@
 package com.xworkz.stringrepresntation;
 
 public class Knife {
-    private String bladeMaterial;
-    private int length;
-    private boolean isSharp;
+    private String type;
+    private String material;
 
-    public Knife(String bladeMaterial, int length, boolean isSharp) {
-        this.bladeMaterial = bladeMaterial;
-        this.length = length;
-        this.isSharp = isSharp;
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Knife) {
+            Knife other = (Knife) obj;
+            return this.type.equals(other.type) && this.material.equals(other.material);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[bladeMaterial=" + bladeMaterial + ", length=" + length + "cm, isSharp=" + isSharp + "]";
+        return "Knife{type='" + type + "', material='" + material + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 2700;
+        return type.hashCode() + material.hashCode();
     }
 }

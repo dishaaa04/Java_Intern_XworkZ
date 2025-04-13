@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class VaseRunner {
     public static void main(String[] args) {
-        Vase vase = new Vase("Glass", 12.5, true);
-        System.out.println("vase = " + vase.toString());
+        Vase vase1 = new Vase();
+        vase1.setMaterial("Ceramic");
 
-        int code = vase.hashCode();
-        System.out.println("value using ref = " + code);
+        Vase vase2 = new Vase();
+        vase2.setMaterial("Ceramic");
 
-        System.out.println("hash code sets");
-        System.out.println("flower = " + "flower".hashCode());
-        System.out.println("ceramic = " + "ceramic".hashCode());
-        System.out.println("pot = " + "pot".hashCode());
+        System.out.println("Checking same location: " + (vase1 == vase2));
+        boolean same = vase1.equals(vase2);
+        System.out.println("vase1 is same as vase2: " + same);
     }
 }

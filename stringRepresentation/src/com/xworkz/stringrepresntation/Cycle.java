@@ -2,23 +2,33 @@ package com.xworkz.stringrepresntation;
 
 public class Cycle {
     private String brand;
-    private int gears;
-    private boolean hasBell;
 
-    public Cycle(String brand, int gears, boolean hasBell) {
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
         this.brand = brand;
-        this.gears = gears;
-        this.hasBell = hasBell;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Cycle) {
+                Cycle other = (Cycle) obj;
+                return this.brand.equals(other.brand);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", gears=" + gears + ", hasBell=" + hasBell + "]";
+        return "Cycle{brand='" + brand + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 1300;
+        return brand.hashCode();
     }
 }

@@ -1,24 +1,32 @@
 package com.xworkz.stringrepresntation;
 
 public class Watch {
-    private String type;
-    private String strapMaterial;
-    private boolean isSmart;
+    private String brand;
 
-    public Watch(String type, String strapMaterial, boolean isSmart) {
-        this.type = type;
-        this.strapMaterial = strapMaterial;
-        this.isSmart = isSmart;
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Watch) {
+            Watch other = (Watch) obj;
+            return this.brand.equals(other.brand);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", strapMaterial=" + strapMaterial + ", isSmart=" + isSmart + "]";
+        return "Watch{brand='" + brand + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 7600;
+        return brand.hashCode();
     }
 }

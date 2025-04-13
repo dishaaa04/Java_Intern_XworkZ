@@ -3,22 +3,39 @@ package com.xworkz.stringrepresntation;
 public class Pan {
     private String material;
     private int diameter;
-    private boolean hasLid;
 
-    public Pan(String material, int diameter, boolean hasLid) {
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
         this.material = material;
+    }
+
+    public int getDiameter() {
+        return diameter;
+    }
+
+    public void setDiameter(int diameter) {
         this.diameter = diameter;
-        this.hasLid = hasLid;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Pan) {
+            Pan other = (Pan) obj;
+            return this.material.equals(other.material) && this.diameter == other.diameter;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", diameter=" + diameter + ", hasLid=" + hasLid + "]";
+        return "Pan{material='" + material + "', diameter=" + diameter + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 4100;
+        return material.hashCode() + diameter;
     }
 }

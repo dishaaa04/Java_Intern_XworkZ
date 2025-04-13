@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class WindowRunner {
     public static void main(String[] args) {
-        Window window = new Window("Aluminium", 4, true);
-        System.out.println("window = " + window.toString());
+        Window w1 = new Window();
+        w1.setFrameType("Aluminium");
 
-        int code = window.hashCode();
-        System.out.println("value using ref = " + code);
+        Window w2 = new Window();
+        w2.setFrameType("Aluminium");
 
-        System.out.println("hash code sets");
-        System.out.println("open = " + "open".hashCode());
-        System.out.println("glass = " + "glass".hashCode());
-        System.out.println("frame = " + "frame".hashCode());
+        System.out.println("Checking same location: " + (w1 == w2));
+        boolean same = w1.equals(w2);
+        System.out.println("w1 is same as w2: " + same);
     }
 }

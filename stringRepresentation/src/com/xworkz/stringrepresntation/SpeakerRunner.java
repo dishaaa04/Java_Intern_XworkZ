@@ -2,15 +2,18 @@ package com.xworkz.stringrepresntation;
 
 public class SpeakerRunner {
     public static void main(String[] args) {
-        Speaker speaker = new Speaker("JBL", 40, true);
-        System.out.println("speaker = " + speaker.toString());
+        Speaker speaker1 = new Speaker();
+        speaker1.setBrand("JBL");
+        speaker1.setBluetooth(true);
+        speaker1.setPowerOutput(60);
 
-        int code = speaker.hashCode();
-        System.out.println("value using ref = " + code);
+        Speaker speaker2 = new Speaker();
+        speaker2.setBrand("JBL");
+        speaker2.setBluetooth(true);
+        speaker2.setPowerOutput(60);
 
-        System.out.println("hash code sets");
-        System.out.println("sound = " + "sound".hashCode());
-        System.out.println("bass = " + "bass".hashCode());
-        System.out.println("music = " + "music".hashCode());
+        System.out.println("Checking same location: " + (speaker1 == speaker2));
+        boolean same = speaker1.equals(speaker2);
+        System.out.println("speaker1 is same as speaker2: " + same);
     }
 }

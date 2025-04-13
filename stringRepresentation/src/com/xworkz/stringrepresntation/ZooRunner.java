@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class ZooRunner {
     public static void main(String[] args) {
-        Zoo zoo = new Zoo("Mysore Zoo", 1500, true);
-        System.out.println("zoo = " + zoo.toString());
+        Zoo z1 = new Zoo();
+        z1.setCity("Mysuru");
 
-        int code = zoo.hashCode();
-        System.out.println("value using ref = " + code);
+        Zoo z2 = new Zoo();
+        z2.setCity("Mysuru");
 
-        System.out.println("hash code sets");
-        System.out.println("animal = " + "animal".hashCode());
-        System.out.println("cage = " + "cage".hashCode());
-        System.out.println("visit = " + "visit".hashCode());
+        System.out.println("Checking same location: " + (z1 == z2));
+        boolean same = z1.equals(z2);
+        System.out.println("z1 is same as z2: " + same);
     }
 }

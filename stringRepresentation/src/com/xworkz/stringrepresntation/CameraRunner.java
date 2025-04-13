@@ -2,15 +2,15 @@ package com.xworkz.stringrepresntation;
 
 public class CameraRunner {
     public static void main(String[] args) {
-        Camera camera = new Camera("Canon", 24, true);
-        System.out.println("camera = " + camera.toString());
 
-        int code = camera.hashCode();
-        System.out.println("value using ref = " + code);
+        Camera camera1 = new Camera();
+        camera1.setBrand("Canon");
 
-        System.out.println("hash code sets");
-        System.out.println("lens = " + "lens".hashCode());
-        System.out.println("shutter = " + "shutter".hashCode());
-        System.out.println("zoom = " + "zoom".hashCode());
+        Camera camera2 = new Camera();
+        camera2.setBrand("Canon");
+
+        System.out.println("Checking same location: " + (camera1 == camera2));
+        boolean same = camera1.equals(camera2);
+        System.out.println("camera1 is same as camera2: " + same);
     }
 }

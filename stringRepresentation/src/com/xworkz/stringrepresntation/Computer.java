@@ -1,24 +1,34 @@
 package com.xworkz.stringrepresntation;
 
 public class Computer {
-    private String brand;
-    private int ram;
     private String processor;
 
-    public Computer(String brand, int ram, String processor) {
-        this.brand = brand;
-        this.ram = ram;
+    public String getProcessor() {
+        return processor;
+    }
+
+    public void setProcessor(String processor) {
         this.processor = processor;
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Computer) {
+                Computer other = (Computer) obj;
+                return this.processor.equals(other.processor);
+            }
+        }
+        return false;
+    }
+
+    @Override
     public String toString() {
-        return "[brand=" + brand + ", ram=" + ram + "GB, processor=" + processor + "]";
+        return "Computer{processor='" + processor + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 999;
+        return processor.hashCode();
     }
 }

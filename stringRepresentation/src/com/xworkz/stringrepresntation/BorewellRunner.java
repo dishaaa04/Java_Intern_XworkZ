@@ -2,21 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class BorewellRunner {
     public static void main(String[] args) {
-        Borewell borewell = new Borewell("Mysore", 350, true);
-        String borewellString = borewell.toString();
-        System.out.println("borewell = " + borewellString);
 
-        int code = borewell.hashCode();
-        System.out.println("value using ref = " + code);
+        Borewell borewell1 = new Borewell();
+        borewell1.setLocation("Chennai");
 
-        System.out.println("hash code sets");
-        String value = "pump";
-        System.out.println("pump = " + value.hashCode());
+        Borewell borewell2 = new Borewell();
+        borewell2.setLocation("Chennai");
 
-        String value2 = "pipe";
-        System.out.println("pipe = " + value2.hashCode());
-
-        String value3 = "water";
-        System.out.println("water = " + value3.hashCode());
+        System.out.println("Checking same location: " + (borewell1 == borewell2));
+        System.out.println("borewell1 is same as borewell2: " + borewell1.equals(borewell2));
     }
 }

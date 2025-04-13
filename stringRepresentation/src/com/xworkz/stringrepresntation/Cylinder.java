@@ -2,23 +2,33 @@ package com.xworkz.stringrepresntation;
 
 public class Cylinder {
     private String gasType;
-    private double weight;
-    private boolean isFull;
 
-    public Cylinder(String gasType, double weight, boolean isFull) {
+    public String getGasType() {
+        return gasType;
+    }
+
+    public void setGasType(String gasType) {
         this.gasType = gasType;
-        this.weight = weight;
-        this.isFull = isFull;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Cylinder) {
+                Cylinder other = (Cylinder) obj;
+                return this.gasType.equals(other.gasType);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[gasType=" + gasType + ", weight=" + weight + "kg, isFull=" + isFull + "]";
+        return "Cylinder{gasType='" + gasType + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 1400;
+        return gasType.hashCode();
     }
 }

@@ -1,24 +1,33 @@
 package com.xworkz.stringrepresntation;
-
 public class Building {
-    private String type;
-    private int floors;
-    private boolean hasLift;
+    private String usage;
 
-    public Building(String type, int floors, boolean hasLift) {
-        this.type = type;
-        this.floors = floors;
-        this.hasLift = hasLift;
+    public String getUsage() {
+        return usage;
+    }
+
+    public void setUsage(String usage) {
+        this.usage = usage;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Building) {
+                Building other = (Building) obj;
+                return this.usage.equals(other.usage);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", floors=" + floors + ", hasLift=" + hasLift + "]";
+        return "Building{usage='" + usage + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 490;
+        return usage.hashCode();
     }
 }

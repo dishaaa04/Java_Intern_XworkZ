@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class WaterBottleRunner {
     public static void main(String[] args) {
-        WaterBottle bottle = new WaterBottle("Steel", 1.0, true);
-        System.out.println("waterBottle = " + bottle.toString());
+        WaterBottle b1 = new WaterBottle();
+        b1.setCapacity("1L");
 
-        int code = bottle.hashCode();
-        System.out.println("value using ref = " + code);
+        WaterBottle b2 = new WaterBottle();
+        b2.setCapacity("1L");
 
-        System.out.println("hash code sets");
-        System.out.println("hydration = " + "hydration".hashCode());
-        System.out.println("sip = " + "sip".hashCode());
-        System.out.println("flask = " + "flask".hashCode());
+        System.out.println("Checking same location: " + (b1 == b2));
+        boolean same = b1.equals(b2);
+        System.out.println("b1 is same as b2: " + same);
     }
 }

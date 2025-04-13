@@ -1,24 +1,32 @@
 package com.xworkz.stringrepresntation;
 
 public class WaterBottle {
-    private String material;
-    private double capacity;
-    private boolean isInsulated;
+    private String capacity;
 
-    public WaterBottle(String material, double capacity, boolean isInsulated) {
-        this.material = material;
+    public String getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(String capacity) {
         this.capacity = capacity;
-        this.isInsulated = isInsulated;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof WaterBottle) {
+            WaterBottle other = (WaterBottle) obj;
+            return this.capacity.equals(other.capacity);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", capacity=" + capacity + ", isInsulated=" + isInsulated + "]";
+        return "WaterBottle{capacity='" + capacity + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 7700;
+        return capacity.hashCode();
     }
 }

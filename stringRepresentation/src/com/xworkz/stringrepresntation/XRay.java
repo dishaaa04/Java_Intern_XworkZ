@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class XRay {
     private String bodyPart;
-    private boolean isDigital;
-    private double cost;
 
-    public XRay(String bodyPart, boolean isDigital, double cost) {
+    public String getBodyPart() {
+        return bodyPart;
+    }
+
+    public void setBodyPart(String bodyPart) {
         this.bodyPart = bodyPart;
-        this.isDigital = isDigital;
-        this.cost = cost;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof XRay) {
+            XRay other = (XRay) obj;
+            return this.bodyPart.equals(other.bodyPart);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[bodyPart=" + bodyPart + ", isDigital=" + isDigital + ", cost=" + cost + "]";
+        return "XRay{bodyPart='" + bodyPart + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 8100;
+        return bodyPart.hashCode();
     }
 }

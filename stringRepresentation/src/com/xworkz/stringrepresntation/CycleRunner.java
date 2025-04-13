@@ -2,15 +2,15 @@ package com.xworkz.stringrepresntation;
 
 public class CycleRunner {
     public static void main(String[] args) {
-        Cycle cycle = new Cycle("Hero", 6, true);
-        System.out.println("cycle = " + cycle.toString());
 
-        int code = cycle.hashCode();
-        System.out.println("value using ref = " + code);
+        Cycle cycle1 = new Cycle();
+        cycle1.setBrand("Hero");
 
-        System.out.println("hash code sets");
-        System.out.println("handle = " + "handle".hashCode());
-        System.out.println("brake = " + "brake".hashCode());
-        System.out.println("pedal = " + "pedal".hashCode());
+        Cycle cycle2 = new Cycle();
+        cycle2.setBrand("Hero");
+
+        System.out.println("Checking same location: " + (cycle1 == cycle2));
+        boolean same = cycle1.equals(cycle2);
+        System.out.println("cycle1 is same as cycle2: " + same);
     }
 }

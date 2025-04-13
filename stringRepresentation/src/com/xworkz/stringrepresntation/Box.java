@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class Box {
     private String shape;
-    private String color;
-    private double weight;
 
-    public Box(String shape, String color, double weight) {
+    public String getShape() {
+        return shape;
+    }
+
+    public void setShape(String shape) {
         this.shape = shape;
-        this.color = color;
-        this.weight = weight;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Box) {
+            Box other = (Box) obj;
+            return this.shape.equals(other.shape);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[shape=" + shape + ", color=" + color + ", weight=" + weight + "kg]";
+        return "Box{shape='" + shape + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 332;
+        return shape.hashCode();
     }
 }

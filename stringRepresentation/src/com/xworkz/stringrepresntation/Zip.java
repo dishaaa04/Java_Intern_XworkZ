@@ -1,24 +1,32 @@
 package com.xworkz.stringrepresntation;
 
 public class Zip {
-    private String fileName;
-    private double sizeMB;
-    private boolean isEncrypted;
+    private String type;
 
-    public Zip(String fileName, double sizeMB, boolean isEncrypted) {
-        this.fileName = fileName;
-        this.sizeMB = sizeMB;
-        this.isEncrypted = isEncrypted;
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Zip) {
+            Zip other = (Zip) obj;
+            return this.type.equals(other.type);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[fileName=" + fileName + ", sizeMB=" + sizeMB + ", isEncrypted=" + isEncrypted + "]";
+        return "Zip{type='" + type + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 9100;
+        return type.hashCode();
     }
 }

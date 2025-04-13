@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class WalletRunner {
     public static void main(String[] args) {
-        Wallet wallet = new Wallet("Black", true, 499.0);
-        System.out.println("wallet = " + wallet.toString());
+        Wallet w1 = new Wallet();
+        w1.setColor("Brown");
 
-        int code = wallet.hashCode();
-        System.out.println("value using ref = " + code);
+        Wallet w2 = new Wallet();
+        w2.setColor("Brown");
 
-        System.out.println("hash code sets");
-        System.out.println("cash = " + "cash".hashCode());
-        System.out.println("leather = " + "leather".hashCode());
-        System.out.println("money = " + "money".hashCode());
+        System.out.println("Checking same location: " + (w1 == w2));
+        boolean same = w1.equals(w2);
+        System.out.println("w1 is same as w2: " + same);
     }
 }

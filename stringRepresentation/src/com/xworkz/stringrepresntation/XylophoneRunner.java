@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class XylophoneRunner {
     public static void main(String[] args) {
-        Xylophone xylo = new Xylophone(12, "Wood", true);
-        System.out.println("xylophone = " + xylo.toString());
+        Xylophone x1 = new Xylophone();
+        x1.setMaterial("Wood");
 
-        int code = xylo.hashCode();
-        System.out.println("value using ref = " + code);
+        Xylophone x2 = new Xylophone();
+        x2.setMaterial("Wood");
 
-        System.out.println("hash code sets");
-        System.out.println("note = " + "note".hashCode());
-        System.out.println("sound = " + "sound".hashCode());
-        System.out.println("melody = " + "melody".hashCode());
+        System.out.println("Checking same location: " + (x1 == x2));
+        boolean same = x1.equals(x2);
+        System.out.println("x1 is same as x2: " + same);
     }
 }

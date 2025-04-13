@@ -1,16 +1,17 @@
-package com.xworkz.stringrepresntation;
 
+package com.xworkz.stringrepresntation;
 public class BridgeRunner {
     public static void main(String[] args) {
-        Bridge bridge = new Bridge("Golden Gate", "Steel", 2737);
-        System.out.println("bridge = " + bridge.toString());
 
-        int code = bridge.hashCode();
-        System.out.println("value using ref = " + code);
+        Bridge bridge1 = new Bridge();
+        bridge1.setType("Suspension");
 
-        System.out.println("hash code sets");
-        System.out.println("river = " + "river".hashCode());
-        System.out.println("support = " + "support".hashCode());
-        System.out.println("beam = " + "beam".hashCode());
+        Bridge bridge2 = new Bridge();
+        bridge2.setType("Suspension");
+
+        System.out.println("Checking same location: " + (bridge1 == bridge2));
+
+        boolean same = bridge1.equals(bridge2);
+        System.out.println("bridge1 is same as bridge2: " + same);
     }
 }

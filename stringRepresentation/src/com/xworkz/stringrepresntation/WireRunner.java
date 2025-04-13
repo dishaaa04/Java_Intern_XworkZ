@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class WireRunner {
     public static void main(String[] args) {
-        Wire wire = new Wire("Copper", 100.0, true);
-        System.out.println("wire = " + wire.toString());
+        Wire w1 = new Wire();
+        w1.setMaterial("Copper");
 
-        int code = wire.hashCode();
-        System.out.println("value using ref = " + code);
+        Wire w2 = new Wire();
+        w2.setMaterial("Copper");
 
-        System.out.println("hash code sets");
-        System.out.println("current = " + "current".hashCode());
-        System.out.println("coil = " + "coil".hashCode());
-        System.out.println("cable = " + "cable".hashCode());
+        System.out.println("Checking same location: " + (w1 == w2));
+        boolean same = w1.equals(w2);
+        System.out.println("w1 is same as w2: " + same);
     }
 }

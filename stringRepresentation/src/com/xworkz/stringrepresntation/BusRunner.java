@@ -2,15 +2,15 @@ package com.xworkz.stringrepresntation;
 
 public class BusRunner {
     public static void main(String[] args) {
-        Bus bus = new Bus("KA-01-F-1234", 50, "Majestic to Electronic City");
-        System.out.println("bus = " + bus.toString());
 
-        int code = bus.hashCode();
-        System.out.println("value using ref = " + code);
+        Bus bus1 = new Bus();
+        bus1.setRoute("Route 101");
 
-        System.out.println("hash code sets");
-        System.out.println("ticket = " + "ticket".hashCode());
-        System.out.println("driver = " + "driver".hashCode());
-        System.out.println("passenger = " + "passenger".hashCode());
+        Bus bus2 = new Bus();
+        bus2.setRoute("Route 101");
+
+        System.out.println("Checking same location: " + (bus1 == bus2));
+        boolean same = bus1.equals(bus2);
+        System.out.println("bus1 is same as bus2: " + same);
     }
 }

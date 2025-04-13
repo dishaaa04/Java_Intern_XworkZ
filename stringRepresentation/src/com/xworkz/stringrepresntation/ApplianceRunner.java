@@ -2,21 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class ApplianceRunner {
     public static void main(String[] args) {
-        Appliance appliance = new Appliance("LG", "Washing Machine", 1500);
-        String applianceString = appliance.toString();
-        System.out.println("appliance = " + applianceString);
 
-        int code = appliance.hashCode();
-        System.out.println("value using ref = " + code);
+        Appliance appliance1 = new Appliance();
+        appliance1.setType("Washing Machine");
 
-        System.out.println("hash code sets");
-        String value = "voltage";
-        System.out.println("voltage = " + value.hashCode());
+        Appliance appliance2 = new Appliance();
+        appliance2.setType("Washing Machine");
 
-        String value2 = "switch";
-        System.out.println("switch = " + value2.hashCode());
-
-        String value3 = "circuit";
-        System.out.println("circuit = " + value3.hashCode());
+        System.out.println("Checking same location: " + (appliance1 == appliance2));
+        System.out.println("appliance1 is same as appliance2: " + appliance1.equals(appliance2));
     }
 }

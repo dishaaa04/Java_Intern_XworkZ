@@ -2,15 +2,15 @@ package com.xworkz.stringrepresntation;
 
 public class DevOpsToolRunner {
     public static void main(String[] args) {
-        DevOpsTool tool = new DevOpsTool("Jenkins", "CI/CD", true);
-        System.out.println("devOpsTool = " + tool.toString());
 
-        int code = tool.hashCode();
-        System.out.println("value using ref = " + code);
+        DevOpsTool tool1 = new DevOpsTool();
+        tool1.setName("Docker");
 
-        System.out.println("hash code sets");
-        System.out.println("docker = " + "docker".hashCode());
-        System.out.println("kubernetes = " + "kubernetes".hashCode());
-        System.out.println("ansible = " + "ansible".hashCode());
+        DevOpsTool tool2 = new DevOpsTool();
+        tool2.setName("Docker");
+
+        System.out.println("Checking same location: " + (tool1 == tool2));
+        boolean same = tool1.equals(tool2);
+        System.out.println("tool1 is same as tool2: " + same);
     }
 }

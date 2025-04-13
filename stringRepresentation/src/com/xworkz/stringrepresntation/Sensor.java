@@ -2,23 +2,51 @@ package com.xworkz.stringrepresntation;
 
 public class Sensor {
     private String type;
-    private String unit;
     private double range;
+    private boolean isActive;
 
-    public Sensor(String type, String unit, double range) {
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
         this.type = type;
-        this.unit = unit;
+    }
+
+    public double getRange() {
+        return range;
+    }
+
+    public void setRange(double range) {
         this.range = range;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean isActive) {
+        this.isActive = isActive;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Sensor) {
+            Sensor other = (Sensor) obj;
+            return this.type.equals(other.type)
+                    && this.range == other.range
+                    && this.isActive == other.isActive;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", unit=" + unit + ", range=" + range + "]";
+        return "Sensor{type='" + type + "', range=" + range + ", isActive=" + isActive + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 5200;
+        return type.hashCode() + Double.valueOf(range).hashCode() + Boolean.valueOf(isActive).hashCode();
     }
 }

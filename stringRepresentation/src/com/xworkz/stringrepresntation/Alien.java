@@ -2,23 +2,33 @@ package com.xworkz.stringrepresntation;
 
 public class Alien {
     private String planet;
-    private int eyes;
-    private int age;
 
-    public Alien(String planet, int eyes, int age) {
+    public String getPlanet() {
+        return planet;
+    }
+
+    public void setPlanet(String planet) {
         this.planet = planet;
-        this.eyes = eyes;
-        this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Alien) {
+                Alien other = (Alien) obj;
+                return this.planet.equals(other.planet);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[planet=" + planet + ", eyes=" + eyes + ", age=" + age + "]";
+        return "Alien{planet='" + planet + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 350;
+        return planet.hashCode();
     }
 }

@@ -2,23 +2,40 @@ package com.xworkz.stringrepresntation;
 
 public class Helmet {
     private String brand;
-    private String size;
-    private boolean isFullFace;
+    private String color;
 
-    public Helmet(String brand, String size, boolean isFullFace) {
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
         this.brand = brand;
-        this.size = size;
-        this.isFullFace = isFullFace;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Helmet) {
+            Helmet other = (Helmet) obj;
+            return this.brand.equals(other.brand) && this.color.equals(other.color);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", size=" + size + ", isFullFace=" + isFullFace + "]";
+        return "Helmet{brand='" + brand + "', color='" + color + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 2100;
+        return brand.hashCode() + color.hashCode();
     }
 }

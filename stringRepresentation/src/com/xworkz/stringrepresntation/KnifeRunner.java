@@ -2,15 +2,17 @@ package com.xworkz.stringrepresntation;
 
 public class KnifeRunner {
     public static void main(String[] args) {
-        Knife knife = new Knife("Stainless Steel", 15, true);
-        System.out.println("knife = " + knife.toString());
 
-        int code = knife.hashCode();
-        System.out.println("value using ref = " + code);
+        Knife knife1 = new Knife();
+        knife1.setType("Chef");
+        knife1.setMaterial("Steel");
 
-        System.out.println("hash code sets");
-        System.out.println("blade = " + "blade".hashCode());
-        System.out.println("handle = " + "handle".hashCode());
-        System.out.println("grip = " + "grip".hashCode());
+        Knife knife2 = new Knife();
+        knife2.setType("Chef");
+        knife2.setMaterial("Steel");
+
+        System.out.println("Checking same location: " + (knife1 == knife2));
+        boolean same = knife1.equals(knife2);
+        System.out.println("knife1 is same as knife2: " + same);
     }
 }

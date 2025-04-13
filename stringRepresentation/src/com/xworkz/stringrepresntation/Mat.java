@@ -2,23 +2,40 @@ package com.xworkz.stringrepresntation;
 
 public class Mat {
     private String material;
-    private String color;
-    private boolean isWashable;
+    private double length;
 
-    public Mat(String material, String color, boolean isWashable) {
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
         this.material = material;
-        this.color = color;
-        this.isWashable = isWashable;
+    }
+
+    public double getLength() {
+        return length;
+    }
+
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Mat) {
+            Mat other = (Mat) obj;
+            return this.material.equals(other.material) && this.length == other.length;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", color=" + color + ", isWashable=" + isWashable + "]";
+        return "Mat{material='" + material + "', length=" + length + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 3200;
+        return material.hashCode() + Double.hashCode(length);
     }
 }

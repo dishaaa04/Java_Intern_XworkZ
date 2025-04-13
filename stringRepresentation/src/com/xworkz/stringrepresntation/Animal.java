@@ -2,23 +2,33 @@ package com.xworkz.stringrepresntation;
 
 public class Animal {
     private String species;
-    private int legs;
-    private boolean isDomestic;
 
-    public Animal(String species, int legs, boolean isDomestic) {
+    public String getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(String species) {
         this.species = species;
-        this.legs = legs;
-        this.isDomestic = isDomestic;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Animal) {
+                Animal other = (Animal) obj;
+                return this.species.equals(other.species);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[species=" + species + ", legs=" + legs + ", isDomestic=" + isDomestic + "]";
+        return "Animal{species='" + species + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 275;
+        return species.hashCode();
     }
 }

@@ -2,15 +2,16 @@ package com.xworkz.stringrepresntation;
 
 public class PhoneRunner {
     public static void main(String[] args) {
-        Phone phone = new Phone("Samsung", "Galaxy A52", 6.5);
-        System.out.println("phone = " + phone.toString());
+        Phone phone1 = new Phone();
+        phone1.setModel("iPhone 15");
+        phone1.setPrice(90000);
 
-        int code = phone.hashCode();
-        System.out.println("value using ref = " + code);
+        Phone phone2 = new Phone();
+        phone2.setModel("iPhone 15");
+        phone2.setPrice(90000);
 
-        System.out.println("hash code sets");
-        System.out.println("call = " + "call".hashCode());
-        System.out.println("text = " + "text".hashCode());
-        System.out.println("camera = " + "camera".hashCode());
+        System.out.println("Checking same location: " + (phone1 == phone2));
+        boolean same = phone1.equals(phone2);
+        System.out.println("phone1 is same as phone2: " + same);
     }
 }

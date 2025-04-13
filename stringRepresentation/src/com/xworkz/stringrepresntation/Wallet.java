@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class Wallet {
     private String color;
-    private boolean hasChain;
-    private double price;
 
-    public Wallet(String color, boolean hasChain, double price) {
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
         this.color = color;
-        this.hasChain = hasChain;
-        this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Wallet) {
+            Wallet other = (Wallet) obj;
+            return this.color.equals(other.color);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[color=" + color + ", hasChain=" + hasChain + ", price=" + price + "]";
+        return "Wallet{color='" + color + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 7500;
+        return color.hashCode();
     }
 }

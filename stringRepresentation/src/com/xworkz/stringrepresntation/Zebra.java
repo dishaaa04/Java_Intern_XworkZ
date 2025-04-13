@@ -1,24 +1,32 @@
 package com.xworkz.stringrepresntation;
 
 public class Zebra {
-    private String habitat;
-    private int age;
-    private boolean isWild;
+    private String origin;
 
-    public Zebra(String habitat, int age, boolean isWild) {
-        this.habitat = habitat;
-        this.age = age;
-        this.isWild = isWild;
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Zebra) {
+            Zebra other = (Zebra) obj;
+            return this.origin.equals(other.origin);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[habitat=" + habitat + ", age=" + age + ", isWild=" + isWild + "]";
+        return "Zebra{origin='" + origin + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 9000;
+        return origin.hashCode();
     }
 }

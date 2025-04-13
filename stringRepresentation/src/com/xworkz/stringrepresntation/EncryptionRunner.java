@@ -2,15 +2,17 @@ package com.xworkz.stringrepresntation;
 
 public class EncryptionRunner {
     public static void main(String[] args) {
-        Encryption encryption = new Encryption("AES", 256, true);
-        System.out.println("encryption = " + encryption.toString());
 
-        int code = encryption.hashCode();
-        System.out.println("value using ref = " + code);
+        Encryption encryption1 = new Encryption();
+        encryption1.setAlgorithm("AES");
+        encryption1.setKeyLength(256);
 
-        System.out.println("hash code sets");
-        System.out.println("rsa = " + "rsa".hashCode());
-        System.out.println("sha256 = " + "sha256".hashCode());
-        System.out.println("ssl = " + "ssl".hashCode());
+        Encryption encryption2 = new Encryption();
+        encryption2.setAlgorithm("AES");
+        encryption2.setKeyLength(256);
+
+        System.out.println("Checking same location: " + (encryption1 == encryption2));
+        boolean same = encryption1.equals(encryption2);
+        System.out.println("encryption1 is same as encryption2: " + same);
     }
 }

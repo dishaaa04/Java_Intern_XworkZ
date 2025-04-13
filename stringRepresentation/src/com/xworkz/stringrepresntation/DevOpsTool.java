@@ -2,23 +2,33 @@ package com.xworkz.stringrepresntation;
 
 public class DevOpsTool {
     private String name;
-    private String purpose;
-    private boolean isOpenSource;
 
-    public DevOpsTool(String name, String purpose, boolean isOpenSource) {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
-        this.purpose = purpose;
-        this.isOpenSource = isOpenSource;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof DevOpsTool) {
+                DevOpsTool other = (DevOpsTool) obj;
+                return this.name.equals(other.name);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[name=" + name + ", purpose=" + purpose + ", isOpenSource=" + isOpenSource + "]";
+        return "DevOpsTool{name='" + name + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 1500;
+        return name.hashCode();
     }
 }

@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class XRayRunner {
     public static void main(String[] args) {
-        XRay xray = new XRay("Chest", true, 1200.0);
-        System.out.println("xray = " + xray.toString());
+        XRay x1 = new XRay();
+        x1.setBodyPart("Chest");
 
-        int code = xray.hashCode();
-        System.out.println("value using ref = " + code);
+        XRay x2 = new XRay();
+        x2.setBodyPart("Chest");
 
-        System.out.println("hash code sets");
-        System.out.println("scan = " + "scan".hashCode());
-        System.out.println("bone = " + "bone".hashCode());
-        System.out.println("image = " + "image".hashCode());
+        System.out.println("Checking same location: " + (x1 == x2));
+        boolean same = x1.equals(x2);
+        System.out.println("x1 is same as x2: " + same);
     }
 }

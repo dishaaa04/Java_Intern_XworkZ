@@ -2,23 +2,51 @@ package com.xworkz.stringrepresntation;
 
 public class Television {
     private String brand;
-    private int screenSize;
+    private int size;
     private boolean isSmart;
 
-    public Television(String brand, int screenSize, boolean isSmart) {
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
         this.brand = brand;
-        this.screenSize = screenSize;
-        this.isSmart = isSmart;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public boolean isSmart() {
+        return isSmart;
+    }
+
+    public void setSmart(boolean smart) {
+        isSmart = smart;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Television) {
+            Television other = (Television) obj;
+            return this.brand.equals(other.brand)
+                    && this.size == other.size
+                    && this.isSmart == other.isSmart;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", screenSize=" + screenSize + ", isSmart=" + isSmart + "]";
+        return "Television{brand='" + brand + "', size=" + size + ", isSmart=" + isSmart + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 6200;
+        return brand.hashCode() + size + Boolean.valueOf(isSmart).hashCode();
     }
 }

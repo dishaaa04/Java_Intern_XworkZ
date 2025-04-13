@@ -2,22 +2,15 @@ package com.xworkz.stringrepresntation;
 
 public class AlienRunner {
     public static void main(String[] args) {
-        Alien alien = new Alien("Mars", 3, 120);
-        String alienString = alien.toString();
-        System.out.println("alien = " + alienString);
 
-        int code = alien.hashCode();
-        System.out.println("value using ref = " + code);
+        Alien alien1 = new Alien();
+        alien1.setPlanet("Mars");
 
-        System.out.println("hash code sets");
-        String value = "spaceship";
-        System.out.println("spaceship = " + value.hashCode());
+        Alien alien2 = new Alien();
+        alien2.setPlanet("Mars");
 
-        String value2 = "galaxy";
-        System.out.println("galaxy = " + value2.hashCode());
-
-        String value3 = "ufo";
-        System.out.println("ufo = " + value3.hashCode());
+        System.out.println("Checking same location: " + (alien1 == alien2));
+        boolean same = alien1.equals(alien2);
+        System.out.println("alien1 is same as alien2: " + same);
     }
 }
-

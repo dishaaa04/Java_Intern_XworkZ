@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class YogaMat {
     private String color;
-    private double thickness;
-    private boolean isFoldable;
 
-    public YogaMat(String color, double thickness, boolean isFoldable) {
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
         this.color = color;
-        this.thickness = thickness;
-        this.isFoldable = isFoldable;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof YogaMat) {
+            YogaMat other = (YogaMat) obj;
+            return this.color.equals(other.color);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[color=" + color + ", thickness=" + thickness + ", isFoldable=" + isFoldable + "]";
+        return "YogaMat{color='" + color + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 8300;
+        return color.hashCode();
     }
 }

@@ -1,24 +1,41 @@
 package com.xworkz.stringrepresntation;
 
 public class Notebook {
-    private String brand;
-    private int pageCount;
+    private int pages;
     private String type;
 
-    public Notebook(String brand, int pageCount, String type) {
-        this.brand = brand;
-        this.pageCount = pageCount;
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
         this.type = type;
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Notebook) {
+            Notebook other = (Notebook) obj;
+            return this.pages == other.pages && this.type.equals(other.type);
+        }
+        return false;
+    }
+
+    @Override
     public String toString() {
-        return "[brand=" + brand + ", pageCount=" + pageCount + ", type=" + type + "]";
+        return "Notebook{pages=" + pages + ", type='" + type + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 3700;
+        return pages + type.hashCode();
     }
 }

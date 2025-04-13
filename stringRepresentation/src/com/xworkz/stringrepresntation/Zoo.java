@@ -1,24 +1,32 @@
 package com.xworkz.stringrepresntation;
 
 public class Zoo {
-    private String name;
-    private int animalsCount;
-    private boolean isOpen;
+    private String city;
 
-    public Zoo(String name, int animalsCount, boolean isOpen) {
-        this.name = name;
-        this.animalsCount = animalsCount;
-        this.isOpen = isOpen;
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Zoo) {
+            Zoo other = (Zoo) obj;
+            return this.city.equals(other.city);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[name=" + name + ", animalsCount=" + animalsCount + ", isOpen=" + isOpen + "]";
+        return "Zoo{city='" + city + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 9200;
+        return city.hashCode();
     }
 }

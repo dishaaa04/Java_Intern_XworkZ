@@ -2,23 +2,33 @@ package com.xworkz.stringrepresntation;
 
 public class Camera {
     private String brand;
-    private int resolution;
-    private boolean hasFlash;
 
-    public Camera(String brand, int resolution, boolean hasFlash) {
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
         this.brand = brand;
-        this.resolution = resolution;
-        this.hasFlash = hasFlash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Camera) {
+                Camera other = (Camera) obj;
+                return this.brand.equals(other.brand);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", resolution=" + resolution + "MP, hasFlash=" + hasFlash + "]";
+        return "Camera{brand='" + brand + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 222;
+        return brand.hashCode();
     }
 }

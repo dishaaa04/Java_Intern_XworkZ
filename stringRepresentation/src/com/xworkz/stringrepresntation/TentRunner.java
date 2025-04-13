@@ -2,15 +2,18 @@ package com.xworkz.stringrepresntation;
 
 public class TentRunner {
     public static void main(String[] args) {
-        Tent tent = new Tent("Green", 4, true);
-        System.out.println("tent = " + tent.toString());
+        Tent tent1 = new Tent();
+        tent1.setColor("Green");
+        tent1.setCapacity(4);
+        tent1.setWaterproof(true);
 
-        int code = tent.hashCode();
-        System.out.println("value using ref = " + code);
+        Tent tent2 = new Tent();
+        tent2.setColor("Green");
+        tent2.setCapacity(4);
+        tent2.setWaterproof(true);
 
-        System.out.println("hash code sets");
-        System.out.println("camp = " + "camp".hashCode());
-        System.out.println("sleep = " + "sleep".hashCode());
-        System.out.println("shade = " + "shade".hashCode());
+        System.out.println("Checking same location: " + (tent1 == tent2));
+        boolean same = tent1.equals(tent2);
+        System.out.println("tent1 is same as tent2: " + same);
     }
 }

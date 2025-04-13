@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class WallClockRunner {
     public static void main(String[] args) {
-        WallClock clock = new WallClock("Round", "Titan", false);
-        System.out.println("wallClock = " + clock.toString());
+        WallClock c1 = new WallClock();
+        c1.setShape("Round");
 
-        int code = clock.hashCode();
-        System.out.println("value using ref = " + code);
+        WallClock c2 = new WallClock();
+        c2.setShape("Round");
 
-        System.out.println("hash code sets");
-        System.out.println("time = " + "time".hashCode());
-        System.out.println("tick = " + "tick".hashCode());
-        System.out.println("second = " + "second".hashCode());
+        System.out.println("Checking same location: " + (c1 == c2));
+        boolean same = c1.equals(c2);
+        System.out.println("c1 is same as c2: " + same);
     }
 }

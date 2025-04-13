@@ -2,15 +2,18 @@ package com.xworkz.stringrepresntation;
 
 public class ProcessorRunner {
     public static void main(String[] args) {
-        Processor processor = new Processor("Intel", 8, 3.6);
-        System.out.println("processor = " + processor.toString());
+        Processor processor1 = new Processor();
+        processor1.setBrand("Intel");
+        processor1.setCores(8);
+        processor1.setFrequency(3.5);
 
-        int code = processor.hashCode();
-        System.out.println("value using ref = " + code);
+        Processor processor2 = new Processor();
+        processor2.setBrand("Intel");
+        processor2.setCores(8);
+        processor2.setFrequency(3.5);
 
-        System.out.println("hash code sets");
-        System.out.println("cpu = " + "cpu".hashCode());
-        System.out.println("cache = " + "cache".hashCode());
-        System.out.println("logic = " + "logic".hashCode());
+        System.out.println("Checking same location: " + (processor1 == processor2));
+        boolean same = processor1.equals(processor2);
+        System.out.println("processor1 is same as processor2: " + same);
     }
 }

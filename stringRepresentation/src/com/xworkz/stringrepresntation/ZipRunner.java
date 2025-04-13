@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class ZipRunner {
     public static void main(String[] args) {
-        Zip zip = new Zip("backup.zip", 15.3, true);
-        System.out.println("zip = " + zip.toString());
+        Zip z1 = new Zip();
+        z1.setType("Plastic");
 
-        int code = zip.hashCode();
-        System.out.println("value using ref = " + code);
+        Zip z2 = new Zip();
+        z2.setType("Plastic");
 
-        System.out.println("hash code sets");
-        System.out.println("compress = " + "compress".hashCode());
-        System.out.println("archive = " + "archive".hashCode());
-        System.out.println("extract = " + "extract".hashCode());
+        System.out.println("Checking same location: " + (z1 == z2));
+        boolean same = z1.equals(z2);
+        System.out.println("z1 is same as z2: " + same);
     }
 }

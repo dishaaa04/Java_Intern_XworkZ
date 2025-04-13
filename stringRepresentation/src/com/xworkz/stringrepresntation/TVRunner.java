@@ -2,15 +2,18 @@ package com.xworkz.stringrepresntation;
 
 public class TVRunner {
     public static void main(String[] args) {
-        TV tv = new TV("Samsung", 43, true);
-        System.out.println("tv = " + tv.toString());
+        TV tv1 = new TV();
+        tv1.setBrand("Samsung");
+        tv1.setType("LED");
+        tv1.setScreenSize(55);
 
-        int code = tv.hashCode();
-        System.out.println("value using ref = " + code);
+        TV tv2 = new TV();
+        tv2.setBrand("Samsung");
+        tv2.setType("LED");
+        tv2.setScreenSize(55);
 
-        System.out.println("hash code sets");
-        System.out.println("remote = " + "remote".hashCode());
-        System.out.println("LED = " + "LED".hashCode());
-        System.out.println("display = " + "display".hashCode());
+        System.out.println("Checking same location: " + (tv1 == tv2));
+        boolean same = tv1.equals(tv2);
+        System.out.println("tv1 is same as tv2: " + same);
     }
 }

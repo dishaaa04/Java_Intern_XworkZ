@@ -1,24 +1,41 @@
 package com.xworkz.stringrepresntation;
 
 public class Lock {
-    private String type;
-    private String brand;
+    private String material;
     private boolean isDigital;
 
-    public Lock(String type, String brand, boolean isDigital) {
-        this.type = type;
-        this.brand = brand;
-        this.isDigital = isDigital;
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public boolean isDigital() {
+        return isDigital;
+    }
+
+    public void setDigital(boolean digital) {
+        isDigital = digital;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Lock) {
+            Lock other = (Lock) obj;
+            return this.material.equals(other.material) && this.isDigital == other.isDigital;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", brand=" + brand + ", isDigital=" + isDigital + "]";
+        return "Lock{material='" + material + "', isDigital=" + isDigital + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 3000;
+        return material.hashCode() + Boolean.hashCode(isDigital);
     }
 }

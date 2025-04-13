@@ -2,15 +2,17 @@ package com.xworkz.stringrepresntation;
 
 public class HelmetRunner {
     public static void main(String[] args) {
-        Helmet helmet = new Helmet("Studds", "M", true);
-        System.out.println("helmet = " + helmet.toString());
 
-        int code = helmet.hashCode();
-        System.out.println("value using ref = " + code);
+        Helmet helmet1 = new Helmet();
+        helmet1.setBrand("Vega");
+        helmet1.setColor("Black");
 
-        System.out.println("hash code sets");
-        System.out.println("visor = " + "visor".hashCode());
-        System.out.println("strap = " + "strap".hashCode());
-        System.out.println("padding = " + "padding".hashCode());
+        Helmet helmet2 = new Helmet();
+        helmet2.setBrand("Vega");
+        helmet2.setColor("Black");
+
+        System.out.println("Checking same location: " + (helmet1 == helmet2));
+        boolean same = helmet1.equals(helmet2);
+        System.out.println("helmet1 is same as helmet2: " + same);
     }
 }

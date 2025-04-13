@@ -2,15 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class ZebraRunner {
     public static void main(String[] args) {
-        Zebra zebra = new Zebra("Savannah", 5, true);
-        System.out.println("zebra = " + zebra.toString());
+        Zebra z1 = new Zebra();
+        z1.setOrigin("Africa");
 
-        int code = zebra.hashCode();
-        System.out.println("value using ref = " + code);
+        Zebra z2 = new Zebra();
+        z2.setOrigin("Africa");
 
-        System.out.println("hash code sets");
-        System.out.println("stripes = " + "stripes".hashCode());
-        System.out.println("grassland = " + "grassland".hashCode());
-        System.out.println("herbivore = " + "herbivore".hashCode());
+        System.out.println("Checking same location: " + (z1 == z2));
+        boolean same = z1.equals(z2);
+        System.out.println("z1 is same as z2: " + same);
     }
 }

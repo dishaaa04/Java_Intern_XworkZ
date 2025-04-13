@@ -1,24 +1,34 @@
 package com.xworkz.stringrepresntation;
 
 public class Cloud {
-    private String type;
-    private double altitude;
-    private boolean isRaining;
+    private String provider;
 
-    public Cloud(String type, double altitude, boolean isRaining) {
-        this.type = type;
-        this.altitude = altitude;
-        this.isRaining = isRaining;
+    public String getProvider() {
+        return provider;
+    }
+
+    public void setProvider(String provider) {
+        this.provider = provider;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Cloud) {
+                Cloud other = (Cloud) obj;
+                return this.provider.equals(other.provider);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", altitude=" + altitude + "km, isRaining=" + isRaining + "]";
+        return "Cloud{provider='" + provider + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 666;
+        return provider.hashCode();
     }
 }

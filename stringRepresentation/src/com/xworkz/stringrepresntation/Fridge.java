@@ -1,24 +1,41 @@
 package com.xworkz.stringrepresntation;
 
 public class Fridge {
-    private String brand;
+    private String model;
     private int capacity;
-    private boolean isDoubleDoor;
 
-    public Fridge(String brand, int capacity, boolean isDoubleDoor) {
-        this.brand = brand;
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
-        this.isDoubleDoor = isDoubleDoor;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Fridge) {
+            Fridge other = (Fridge) obj;
+            return this.model.equals(other.model) && this.capacity == other.capacity;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", capacity=" + capacity + "L, isDoubleDoor=" + isDoubleDoor + "]";
+        return "Fridge{model='" + model + "', capacity=" + capacity + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 1800;
+        return model.hashCode() + capacity;
     }
 }

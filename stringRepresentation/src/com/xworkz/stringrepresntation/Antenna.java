@@ -1,24 +1,32 @@
 package com.xworkz.stringrepresntation;
 
 public class Antenna {
-    private String type;
-    private double frequency;
-    private int length;
+    private String frequencyRange;
 
-    public Antenna(String type, double frequency, int length) {
-        this.type = type;
-        this.frequency = frequency;
-        this.length = length;
+    public String getFrequencyRange() {
+        return frequencyRange;
+    }
+
+    public void setFrequencyRange(String frequencyRange) {
+        this.frequencyRange = frequencyRange;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Antenna) {
+            Antenna other = (Antenna) obj;
+            return this.frequencyRange.equals(other.frequencyRange);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", frequency=" + frequency + ", length=" + length + "]";
+        return "Antenna{frequencyRange='" + frequencyRange + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 120;
+        return frequencyRange.hashCode();
     }
 }

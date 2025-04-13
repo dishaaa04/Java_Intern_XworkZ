@@ -2,15 +2,17 @@ package com.xworkz.stringrepresntation;
 
 public class IronRunner {
     public static void main(String[] args) {
-        Iron iron = new Iron("Philips", 1200, true);
-        System.out.println("iron = " + iron.toString());
 
-        int code = iron.hashCode();
-        System.out.println("value using ref = " + code);
+        Iron iron1 = new Iron();
+        iron1.setBrand("Philips");
+        iron1.setType("Dry");
 
-        System.out.println("hash code sets");
-        System.out.println("plate = " + "plate".hashCode());
-        System.out.println("steam = " + "steam".hashCode());
-        System.out.println("cord = " + "cord".hashCode());
+        Iron iron2 = new Iron();
+        iron2.setBrand("Philips");
+        iron2.setType("Dry");
+
+        System.out.println("Checking same location: " + (iron1 == iron2));
+        boolean same = iron1.equals(iron2);
+        System.out.println("iron1 is same as iron2: " + same);
     }
 }

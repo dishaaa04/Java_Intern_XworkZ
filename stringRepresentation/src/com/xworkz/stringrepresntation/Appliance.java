@@ -1,24 +1,32 @@
 package com.xworkz.stringrepresntation;
 
 public class Appliance {
-    private String brand;
     private String type;
-    private int power;
 
-    public Appliance(String brand, String type, int power) {
-        this.brand = brand;
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
         this.type = type;
-        this.power = power;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Appliance) {
+            Appliance other = (Appliance) obj;
+            return this.type.equals(other.type);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", type=" + type + ", power=" + power + "W]";
+        return "Appliance{type='" + type + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 300;
+        return type.hashCode();
     }
 }

@@ -2,15 +2,18 @@ package com.xworkz.stringrepresntation;
 
 public class TableRunner {
     public static void main(String[] args) {
-        Table table = new Table("Rectangle", "Wood", 4);
-        System.out.println("table = " + table.toString());
+        Table table1 = new Table();
+        table1.setMaterial("Wood");
+        table1.setLegs(4);
+        table1.setShape("Rectangle");
 
-        int code = table.hashCode();
-        System.out.println("value using ref = " + code);
+        Table table2 = new Table();
+        table2.setMaterial("Wood");
+        table2.setLegs(4);
+        table2.setShape("Rectangle");
 
-        System.out.println("hash code sets");
-        System.out.println("desk = " + "desk".hashCode());
-        System.out.println("workspace = " + "workspace".hashCode());
-        System.out.println("study = " + "study".hashCode());
+        System.out.println("Checking same location: " + (table1 == table2));
+        boolean same = table1.equals(table2);
+        System.out.println("table1 is same as table2: " + same);
     }
 }

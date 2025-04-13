@@ -1,24 +1,41 @@
 package com.xworkz.stringrepresntation;
 
 public class Keyboard {
-    private String type;
-    private boolean isWireless;
-    private int keyCount;
+    private String layout;
+    private boolean wireless;
 
-    public Keyboard(String type, boolean isWireless, int keyCount) {
-        this.type = type;
-        this.isWireless = isWireless;
-        this.keyCount = keyCount;
+    public String getLayout() {
+        return layout;
+    }
+
+    public void setLayout(String layout) {
+        this.layout = layout;
+    }
+
+    public boolean isWireless() {
+        return wireless;
+    }
+
+    public void setWireless(boolean wireless) {
+        this.wireless = wireless;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Keyboard) {
+            Keyboard other = (Keyboard) obj;
+            return this.layout.equals(other.layout) && this.wireless == other.wireless;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", isWireless=" + isWireless + ", keyCount=" + keyCount + "]";
+        return "Keyboard{layout='" + layout + "', wireless=" + wireless + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 2600;
+        return layout.hashCode() + Boolean.hashCode(wireless);
     }
 }

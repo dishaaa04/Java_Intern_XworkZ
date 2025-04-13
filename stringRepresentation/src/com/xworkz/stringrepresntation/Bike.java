@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class Bike {
     private String model;
-    private int engineCC;
-    private double price;
 
-    public Bike(String model, int engineCC, double price) {
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
         this.model = model;
-        this.engineCC = engineCC;
-        this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Bike) {
+            Bike other = (Bike) obj;
+            return this.model.equals(other.model);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[model=" + model + ", engineCC=" + engineCC + ", price=" + price + "]";
+        return "Bike{model='" + model + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 800;
+        return model.hashCode();
     }
 }

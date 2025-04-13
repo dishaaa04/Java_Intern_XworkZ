@@ -2,15 +2,16 @@ package com.xworkz.stringrepresntation;
 
 public class NotebookRunner {
     public static void main(String[] args) {
-        Notebook notebook = new Notebook("Classmate", 200, "Ruled");
-        System.out.println("notebook = " + notebook.toString());
+        Notebook nb1 = new Notebook();
+        nb1.setPages(200);
+        nb1.setType("Ruled");
 
-        int code = notebook.hashCode();
-        System.out.println("value using ref = " + code);
+        Notebook nb2 = new Notebook();
+        nb2.setPages(200);
+        nb2.setType("Ruled");
 
-        System.out.println("hash code sets");
-        System.out.println("paper = " + "paper".hashCode());
-        System.out.println("cover = " + "cover".hashCode());
-        System.out.println("binding = " + "binding".hashCode());
+        System.out.println("Checking same location: " + (nb1 == nb2));
+        boolean same = nb1.equals(nb2);
+        System.out.println("nb1 is same as nb2: " + same);
     }
 }

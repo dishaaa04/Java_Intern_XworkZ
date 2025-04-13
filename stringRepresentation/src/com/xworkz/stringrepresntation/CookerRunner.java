@@ -2,15 +2,15 @@ package com.xworkz.stringrepresntation;
 
 public class CookerRunner {
     public static void main(String[] args) {
-        Cooker cooker = new Cooker("Pressure", 5, false);
-        System.out.println("cooker = " + cooker.toString());
 
-        int code = cooker.hashCode();
-        System.out.println("value using ref = " + code);
+        Cooker cooker1 = new Cooker();
+        cooker1.setBrand("Prestige");
 
-        System.out.println("hash code sets");
-        System.out.println("steam = " + "steam".hashCode());
-        System.out.println("lid = " + "lid".hashCode());
-        System.out.println("gas = " + "gas".hashCode());
+        Cooker cooker2 = new Cooker();
+        cooker2.setBrand("Prestige");
+
+        System.out.println("Checking same location: " + (cooker1 == cooker2));
+        boolean same = cooker1.equals(cooker2);
+        System.out.println("cooker1 is same as cooker2: " + same);
     }
 }

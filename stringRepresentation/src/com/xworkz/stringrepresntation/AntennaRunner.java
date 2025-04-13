@@ -2,21 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class AntennaRunner {
     public static void main(String[] args) {
-        Antenna antenna = new Antenna("Yagi", 98.5, 120);
-        String antennaString = antenna.toString();
-        System.out.println("antenna = " + antennaString);
 
-        int code = antenna.hashCode();
-        System.out.println("value using ref = " + code);
+        Antenna antenna1 = new Antenna();
+        antenna1.setFrequencyRange("700MHz - 2.5GHz");
 
-        System.out.println("hash code sets");
-        String value = "signal";
-        System.out.println("signal = " + value.hashCode());
+        Antenna antenna2 = new Antenna();
+        antenna2.setFrequencyRange("700MHz - 2.5GHz");
 
-        String value2 = "transmit";
-        System.out.println("transmit = " + value2.hashCode());
-
-        String value3 = "receiver";
-        System.out.println("receiver = " + value3.hashCode());
+        System.out.println("Checking same location: " + (antenna1 == antenna2));
+        System.out.println("antenna1 is same as antenna2: " + antenna1.equals(antenna2));
     }
 }

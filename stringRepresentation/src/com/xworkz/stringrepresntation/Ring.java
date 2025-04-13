@@ -3,22 +3,50 @@ package com.xworkz.stringrepresntation;
 public class Ring {
     private String material;
     private double size;
-    private boolean isGemStudded;
+    private boolean hasStone;
 
-    public Ring(String material, double size, boolean isGemStudded) {
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
         this.material = material;
+    }
+
+    public double getSize() {
+        return size;
+    }
+
+    public void setSize(double size) {
         this.size = size;
-        this.isGemStudded = isGemStudded;
+    }
+
+    public boolean isHasStone() {
+        return hasStone;
+    }
+
+    public void setHasStone(boolean hasStone) {
+        this.hasStone = hasStone;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Ring) {
+            Ring other = (Ring) obj;
+            return this.material.equals(other.material)
+                    && this.size == other.size
+                    && this.hasStone == other.hasStone;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", size=" + size + ", isGemStudded=" + isGemStudded + "]";
+        return "Ring{material='" + material + "', size=" + size + ", hasStone=" + hasStone + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 5000;
+        return material.hashCode() + Double.valueOf(size).hashCode() + Boolean.valueOf(hasStone).hashCode();
     }
 }

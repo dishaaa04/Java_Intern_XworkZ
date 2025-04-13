@@ -3,22 +3,39 @@ package com.xworkz.stringrepresntation;
 public class Kettle {
     private String brand;
     private int capacity;
-    private boolean isElectric;
 
-    public Kettle(String brand, int capacity, boolean isElectric) {
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
-        this.isElectric = isElectric;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Kettle) {
+            Kettle other = (Kettle) obj;
+            return this.brand.equals(other.brand) && this.capacity == other.capacity;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[brand=" + brand + ", capacity=" + capacity + "ml, isElectric=" + isElectric + "]";
+        return "Kettle{brand='" + brand + "', capacity=" + capacity + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 2500;
+        return brand.hashCode() + capacity;
     }
 }

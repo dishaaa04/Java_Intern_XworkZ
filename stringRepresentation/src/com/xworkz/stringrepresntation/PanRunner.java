@@ -2,15 +2,16 @@ package com.xworkz.stringrepresntation;
 
 public class PanRunner {
     public static void main(String[] args) {
-        Pan pan = new Pan("Aluminum", 24, true);
-        System.out.println("pan = " + pan.toString());
+        Pan pan1 = new Pan();
+        pan1.setMaterial("Steel");
+        pan1.setDiameter(28);
 
-        int code = pan.hashCode();
-        System.out.println("value using ref = " + code);
+        Pan pan2 = new Pan();
+        pan2.setMaterial("Steel");
+        pan2.setDiameter(28);
 
-        System.out.println("hash code sets");
-        System.out.println("cook = " + "cook".hashCode());
-        System.out.println("stove = " + "stove".hashCode());
-        System.out.println("fry = " + "fry".hashCode());
+        System.out.println("Checking same location: " + (pan1 == pan2));
+        boolean same = pan1.equals(pan2);
+        System.out.println("pan1 is same as pan2: " + same);
     }
 }

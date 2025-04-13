@@ -1,24 +1,32 @@
 package com.xworkz.stringrepresntation;
 
 public class Window {
-    private String frameMaterial;
-    private int panes;
-    private boolean isOpenable;
+    private String frameType;
 
-    public Window(String frameMaterial, int panes, boolean isOpenable) {
-        this.frameMaterial = frameMaterial;
-        this.panes = panes;
-        this.isOpenable = isOpenable;
+    public String getFrameType() {
+        return frameType;
+    }
+
+    public void setFrameType(String frameType) {
+        this.frameType = frameType;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Window) {
+            Window other = (Window) obj;
+            return this.frameType.equals(other.frameType);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[frameMaterial=" + frameMaterial + ", panes=" + panes + ", isOpenable=" + isOpenable + "]";
+        return "Window{frameType='" + frameType + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 7800;
+        return frameType.hashCode();
     }
 }

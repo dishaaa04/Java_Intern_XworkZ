@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class Bird {
     private String name;
-    private String color;
-    private boolean canFly;
 
-    public Bird(String name, String color, boolean canFly) {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
-        this.color = color;
-        this.canFly = canFly;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Bird) {
+            Bird other = (Bird) obj;
+            return this.name.equals(other.name);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[name=" + name + ", color=" + color + ", canFly=" + canFly + "]";
+        return "Bird{name='" + name + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 220;
+        return name.hashCode();
     }
 }

@@ -2,15 +2,15 @@ package com.xworkz.stringrepresntation;
 
 public class CarRunner {
     public static void main(String[] args) {
-        Car car = new Car("Tesla Model 3", "Electric", 5);
-        System.out.println("car = " + car.toString());
 
-        int code = car.hashCode();
-        System.out.println("value using ref = " + code);
+        Car car1 = new Car();
+        car1.setModel("Toyota");
 
-        System.out.println("hash code sets");
-        System.out.println("engine = " + "engine".hashCode());
-        System.out.println("wheel = " + "wheel".hashCode());
-        System.out.println("mirror = " + "mirror".hashCode());
+        Car car2 = new Car();
+        car2.setModel("Toyota");
+
+        System.out.println("Checking same location: " + (car1 == car2));
+        boolean same = car1.equals(car2);
+        System.out.println("car1 is same as car2: " + same);
     }
 }

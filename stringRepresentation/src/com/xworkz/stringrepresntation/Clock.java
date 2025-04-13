@@ -1,24 +1,34 @@
 package com.xworkz.stringrepresntation;
 
 public class Clock {
-    private String type;
-    private boolean hasAlarm;
-    private String display;
+    private String brand;
 
-    public Clock(String type, boolean hasAlarm, String display) {
-        this.type = type;
-        this.hasAlarm = hasAlarm;
-        this.display = display;
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Clock) {
+                Clock other = (Clock) obj;
+                return this.brand.equals(other.brand);
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", hasAlarm=" + hasAlarm + ", display=" + display + "]";
+        return "Clock{brand='" + brand + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 555;
+        return brand.hashCode();
     }
 }

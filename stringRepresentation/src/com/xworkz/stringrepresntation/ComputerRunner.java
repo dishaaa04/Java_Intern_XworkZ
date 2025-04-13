@@ -2,15 +2,15 @@ package com.xworkz.stringrepresntation;
 
 public class ComputerRunner {
     public static void main(String[] args) {
-        Computer computer = new Computer("Dell", 16, "Intel i7");
-        System.out.println("computer = " + computer.toString());
 
-        int code = computer.hashCode();
-        System.out.println("value using ref = " + code);
+        Computer computer1 = new Computer();
+        computer1.setProcessor("Intel i7");
 
-        System.out.println("hash code sets");
-        System.out.println("desktop = " + "desktop".hashCode());
-        System.out.println("laptop = " + "laptop".hashCode());
-        System.out.println("monitor = " + "monitor".hashCode());
+        Computer computer2 = new Computer();
+        computer2.setProcessor("Intel i7");
+
+        System.out.println("Checking same location: " + (computer1 == computer2));
+        boolean same = computer1.equals(computer2);
+        System.out.println("computer1 is same as computer2: " + same);
     }
 }

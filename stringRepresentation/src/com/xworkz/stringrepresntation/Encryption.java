@@ -1,24 +1,41 @@
 package com.xworkz.stringrepresntation;
 
 public class Encryption {
-    private String type;
+    private String algorithm;
     private int keyLength;
-    private boolean isSymmetric;
 
-    public Encryption(String type, int keyLength, boolean isSymmetric) {
-        this.type = type;
+    public String getAlgorithm() {
+        return algorithm;
+    }
+
+    public void setAlgorithm(String algorithm) {
+        this.algorithm = algorithm;
+    }
+
+    public int getKeyLength() {
+        return keyLength;
+    }
+
+    public void setKeyLength(int keyLength) {
         this.keyLength = keyLength;
-        this.isSymmetric = isSymmetric;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Encryption) {
+            Encryption other = (Encryption) obj;
+            return this.algorithm.equals(other.algorithm) && this.keyLength == other.keyLength;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[type=" + type + ", keyLength=" + keyLength + ", isSymmetric=" + isSymmetric + "]";
+        return "Encryption{algorithm='" + algorithm + "', keyLength=" + keyLength + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 1600;
+        return algorithm.hashCode() + keyLength;
     }
 }

@@ -2,21 +2,14 @@ package com.xworkz.stringrepresntation;
 
 public class BirdRunner {
     public static void main(String[] args) {
-        Bird bird = new Bird("Peacock", "Blue", true);
-        String birdString = bird.toString();
-        System.out.println("bird = " + birdString);
 
-        int code = bird.hashCode();
-        System.out.println("value using ref = " + code);
+        Bird bird1 = new Bird();
+        bird1.setName("Peacock");
 
-        System.out.println("hash code sets");
-        String value = "wing";
-        System.out.println("wing = " + value.hashCode());
+        Bird bird2 = new Bird();
+        bird2.setName("Peacock");
 
-        String value2 = "nest";
-        System.out.println("nest = " + value2.hashCode());
-
-        String value3 = "sky";
-        System.out.println("sky = " + value3.hashCode());
+        System.out.println("Checking same location: " + (bird1 == bird2));
+        System.out.println("bird1 is same as bird2: " + bird1.equals(bird2));
     }
 }

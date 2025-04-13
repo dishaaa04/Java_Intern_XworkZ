@@ -2,23 +2,31 @@ package com.xworkz.stringrepresntation;
 
 public class Vase {
     private String material;
-    private double height;
-    private boolean isDecorative;
 
-    public Vase(String material, double height, boolean isDecorative) {
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
         this.material = material;
-        this.height = height;
-        this.isDecorative = isDecorative;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Vase) {
+            Vase other = (Vase) obj;
+            return this.material.equals(other.material);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[material=" + material + ", height=" + height + ", isDecorative=" + isDecorative + "]";
+        return "Vase{material='" + material + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 7200;
+        return material.hashCode();
     }
 }

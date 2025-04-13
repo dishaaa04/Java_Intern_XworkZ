@@ -2,15 +2,17 @@ package com.xworkz.stringrepresntation;
 
 public class MachineLearningModelRunner {
     public static void main(String[] args) {
-        MachineLearningModel ml = new MachineLearningModel("Decision Tree", "TensorFlow", 100000);
-        System.out.println("ml = " + ml.toString());
 
-        int code = ml.hashCode();
-        System.out.println("value using ref = " + code);
+        MachineLearningModel model1 = new MachineLearningModel();
+        model1.setAlgorithm("Random Forest");
+        model1.setAccuracy(92.5);
 
-        System.out.println("hash code sets");
-        System.out.println("model = " + "model".hashCode());
-        System.out.println("training = " + "training".hashCode());
-        System.out.println("accuracy = " + "accuracy".hashCode());
+        MachineLearningModel model2 = new MachineLearningModel();
+        model2.setAlgorithm("Random Forest");
+        model2.setAccuracy(92.5);
+
+        System.out.println("Checking same location: " + (model1 == model2));
+        boolean same = model1.equals(model2);
+        System.out.println("model1 is same as model2: " + same);
     }
 }

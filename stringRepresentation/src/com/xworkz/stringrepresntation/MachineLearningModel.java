@@ -2,23 +2,40 @@ package com.xworkz.stringrepresntation;
 
 public class MachineLearningModel {
     private String algorithm;
-    private String framework;
-    private int datasetSize;
+    private double accuracy;
 
-    public MachineLearningModel(String algorithm, String framework, int datasetSize) {
+    public String getAlgorithm() {
+        return algorithm;
+    }
+
+    public void setAlgorithm(String algorithm) {
         this.algorithm = algorithm;
-        this.framework = framework;
-        this.datasetSize = datasetSize;
+    }
+
+    public double getAccuracy() {
+        return accuracy;
+    }
+
+    public void setAccuracy(double accuracy) {
+        this.accuracy = accuracy;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof MachineLearningModel) {
+            MachineLearningModel other = (MachineLearningModel) obj;
+            return this.algorithm.equals(other.algorithm) && this.accuracy == other.accuracy;
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return "[algorithm=" + algorithm + ", framework=" + framework + ", datasetSize=" + datasetSize + "]";
+        return "MachineLearningModel{algorithm='" + algorithm + "', accuracy=" + accuracy + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("value " + super.hashCode());
-        return 3100;
+        return algorithm.hashCode() + Double.hashCode(accuracy);
     }
 }
