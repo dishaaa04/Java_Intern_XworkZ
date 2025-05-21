@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actor Information</title>
+</head>
+<body>
+<h2>Enter Actor Details</h2>
+<form action="ActorServlet" method="post">
+    <label>Name:</label>
+    <input type="text" name="name" required><br><br>
+
+    <label>Language:</label>
+    <select name="language">
+        <option>Kannada</option>
+        <option>Telugu</option>
+        <option>Hindi</option>
+        <option>Tamil</option>
+        <option>English</option>
+    </select><br><br>
+
+    <label>Salary (in crores):</label>
+    <input type="number" name="salary" required><br><br>
+
+    <label>Blockbusters:</label>
+    <input type="number" name="blockbusters" required><br><br>
+
+    <label>Flops:</label>
+    <input type="number" name="flops" required><br><br>
+
+    <label>Upcoming Movie:</label>
+    <input type="text" name="upcomingMovie"><br><br>
+
+    <label>Upcoming Movie Producer:</label>
+    <input type="text" name="producer"><br><br>
+
+    <label>Upcoming Movie Director:</label>
+    <input type="text" name="director"><br><br>
+
+    <label>Upcoming Movie Budget (in crores):</label>
+    <input type="number" name="budget"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
