@@ -1,45 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Actor Information</title>
+    <meta charset="UTF-8">
+    <title>Actor Details</title>
 </head>
 <body>
-<h2>Enter Actor Details</h2>
-<form action="ActorServlet" method="post">
-    <label>Name:</label>
-    <input type="text" name="name" required><br><br>
+<h1>Actor Details</h1>
+<form action="ActorServlet" method="post" >
+    <label>Name: </label>
+    <input type="text" name="Name"><br><br>
+    <label for="language">language</label>
+    <select name="language" id="language" name="language">
+        <option value="en">English</option>
+        <option value="ka">Kannada</option>
+        <option value="hi">Hindi</option>
+    </select>
+    <br><br>
+    <label>Salary: </label>
+    <input type="text" name="Salary"><br><br>
+    <label>Block Busters: </label>
+    <input type="text" name="BlockBusters"><br><br>
+    <label>Flops: </label>
+    <input type="text" name="Flops"><br><br>
+    <label>Upcoming Movie: </label>
+    <input type="text" name="UpcomingMovie"><br><br>
+    <label>Upcoming Movie Producer: </label>
+    <input type="text" name="UpcomingMovieProducer"><br><br>
+    <label>Upcoming Movie Director: </label>
+    <input type="text" name="UpcomingMovieDirector"><br><br>
+    <label>Upcoming Movie Budget: </label>
+    <input type="text" name="UpcomingMovieBudget"><br><br>
+    <input type="submit" value="Click Enter">
 
-    <label>Language:</label>
-    <select name="language">
-        <option>Kannada</option>
-        <option>Telugu</option>
-        <option>Hindi</option>
-        <option>Tamil</option>
-        <option>English</option>
-    </select><br><br>
-
-    <label>Salary (in crores):</label>
-    <input type="number" name="salary" required><br><br>
-
-    <label>Blockbusters:</label>
-    <input type="number" name="blockbusters" required><br><br>
-
-    <label>Flops:</label>
-    <input type="number" name="flops" required><br><br>
-
-    <label>Upcoming Movie:</label>
-    <input type="text" name="upcomingMovie"><br><br>
-
-    <label>Upcoming Movie Producer:</label>
-    <input type="text" name="producer"><br><br>
-
-    <label>Upcoming Movie Director:</label>
-    <input type="text" name="director"><br><br>
-
-    <label>Upcoming Movie Budget (in crores):</label>
-    <input type="number" name="budget"><br><br>
-
-    <input type="submit" value="Submit">
 </form>
+
 </body>
 </html>

@@ -1,33 +1,44 @@
 package com.xworkz.movie;
 
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
 
-public class ActorServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
-        String language = req.getParameter("language");
-        String salary = req.getParameter("salary");
-        String blockbusters = req.getParameter("blockbusters");
-        String flops = req.getParameter("flops");
-        String upcomingMovie = req.getParameter("upcomingMovie");
-        String producer = req.getParameter("producer");
-        String director = req.getParameter("director");
-        String budget = req.getParameter("budget");
+@WebServlet(urlPatterns = "/ActorServlet")
+public class ActorServlet extends GenericServlet {
 
-        req.setAttribute("name", name);
-        req.setAttribute("language", language);
-        req.setAttribute("salary", salary);
-        req.setAttribute("blockbusters", blockbusters);
-        req.setAttribute("flops", flops);
-        req.setAttribute("upcomingMovie", upcomingMovie);
-        req.setAttribute("producer", producer);
-        req.setAttribute("director", director);
-        req.setAttribute("budget", budget);
+    public ActorServlet()
+    {
+        System.out.println("Running Actor Servlet Constructor");
+    }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("success.jsp");
-        dispatcher.forward(req, resp);
+    @Override
+    public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
+        System.out.println("Running Servlet Request and Response");
+        String name= servletRequest.getParameter("Name");
+        String language=servletRequest.getParameter("language");
+        String salary=servletRequest.getParameter("Salary");
+        String BlockBusters=servletRequest.getParameter("BlockBusters");
+        String Flops=servletRequest.getParameter("Flops");
+        String Upcoming_Movie=servletRequest.getParameter("UpcomingMovie");
+        String Upcoming_Movie_Producer=servletRequest.getParameter("UpcomingMovieProducer");
+        String Upcoming_Movie_Director=servletRequest.getParameter("UpcomingMovieDirector");
+        String Upcoming_Movie_Budget=servletRequest.getParameter("UpcomingMovieBudget");
+        System.out.println("Actor Name: "+name+" ,Language: "+language+" ,Actor Name: "+salary+" ,Block Busters: "+BlockBusters+", Flops: "+Flops+" ,Upcoming Movie: "+Upcoming_Movie+", Upcoming Movie Producer: "+Upcoming_Movie_Producer+", Upcoming Movie Director: "+Upcoming_Movie_Director+", Upcoming Movie Budget: "+Upcoming_Movie_Budget);
+        servletResponse.setContentType("text/html");
+        PrintWriter writer=servletResponse.getWriter();
+        writer.println("<html>");
+        writer.println("<body>");
+        writer.println("<h1 style='color:red;'>");
+
+        writer.println(name+" ,Actor Details Registered");
+        writer.println("</h1>");
+        writer.println("</body>");
+        writer.println("</html>");
     }
 }
