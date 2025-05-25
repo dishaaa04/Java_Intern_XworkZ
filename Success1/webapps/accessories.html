@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accessories Form</title>
+</head>
+<body>
+<h2>Register Accessories</h2>
+<form action="AccessoriesServlet" method="post">
+  Name: <input type="text" name="Name"><br><br>
+  Type:
+  <select name="Type">
+    <option>Filter</option>
+    <option>Light</option>
+    <option>Heater</option>
+  </select><br><br>
+  Warranty:
+  <select name="Warranty">
+    <option>6 months</option>
+    <option>1 year</option>
+    <option>2 years</option>
+  </select><br><br>
+  Price: <input type="text" name="Price"><br><br>
+  Quantity: <input type="number" name="Quantity"><br><br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
