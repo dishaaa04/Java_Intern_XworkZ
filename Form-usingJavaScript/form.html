@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .redColor {
+            color: crimson;
+        }
+    </style>
+    <script src="form.js" defer></script>
+</head>
+
+<body>
+    <form name="formName" onsubmit="return validate()">
+        <div>
+            <label for="nameId">Name</label>
+            <span class="redColor">*</span><span>:</span>
+            <input type="text" id="nameId" name="nameName" required>
+        </div>
+
+        <div>
+            <label for="ageId">Age</label>
+            <span class="redColor">*</span><span>:</span>
+            <input type="text" id="ageId" name="ageAge" required>
+        </div>
+
+        <div>
+            <label for="emailId">Email</label>
+            <span class="redColor">*</span><span>:</span>
+            <input type="email" id="emailId" name="emailName" required />
+        </div>
+
+        <div>
+            <label for="passwordId">Password</label>
+            <span class="redColor">*</span><span>:</span>
+            <input type="password" id="passwordId" name="passwordName" required />
+        </div>
+
+        <div>
+            <label for="confirmPasswordId">Confirm Password</label>
+            <span class="redColor">*</span><span>:</span>
+            <input type="password" id="confirmPasswordId" name="confirmPasswordName" required />
+        </div>
+
+        <div>
+            <label>Gender</label>
+            <span class="redColor">*</span><span>:</span>
+            <input type="radio" name="gender" value="male" /> Male
+            <input type="radio" name="gender" value="female" /> Female
+            <input type="radio" name="gender" value="other" /> Other
+        </div>
+
+        <div>
+            <label>Hobbies</label>
+            <span>:</span>
+            <input type="checkbox" name="hobby" value="Reading" /> Reading
+            <input type="checkbox" name="hobby" value="Traveling" /> Traveling
+            <input type="checkbox" name="hobby" value="Gaming" /> Gaming
+        </div>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Clear</button>
+    </form>
+</body>
+
+</html>
