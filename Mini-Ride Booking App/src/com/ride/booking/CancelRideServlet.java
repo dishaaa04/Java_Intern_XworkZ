@@ -12,7 +12,7 @@ public class CancelRideServlet extends HttpServlet {
         int bookingId = Integer.parseInt(req.getParameter("bookingId"));
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ride_booking", "root", "disha1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ride_booking", "root", "");
             PreparedStatement ps = con.prepareStatement("UPDATE bookings SET status='Cancelled' WHERE id=?");
             ps.setInt(1, bookingId);
             ps.executeUpdate();

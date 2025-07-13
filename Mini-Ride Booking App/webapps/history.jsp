@@ -9,7 +9,7 @@
     <tr><th>ID</th><th>Name</th><th>Pickup</th><th>Drop</th><th>Fare</th><th>Status</th><th>Time</th><th>Action</th></tr>
     <%
     Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ride_booking", "root", "disha1234");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ride_booking", "root", " ");
     Statement stmt = con.createStatement();
     ResultSet rs = stmt.executeQuery("SELECT * FROM bookings ORDER BY ride_time DESC");
     while(rs.next()) {
